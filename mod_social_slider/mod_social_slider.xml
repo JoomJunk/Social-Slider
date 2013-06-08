@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" method="upgrade">
+	<name>JJ Social Slider</name> 
+	<author>JoomJunk</author> 
+	<creationDate>7th Dec 2012</creationDate> 
+	<copyright>Copyright (C) 2013 JoomJunk</copyright> 
+	<license>http://www.gnu.org/licenses/gpl-3.0.html</license> 
+	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
+	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
+	<version>1.2.3</version> 
+	<description>JJ_SOCIAL_SLIDER_DESC</description>
+	
+	<files>
+		<filename module="mod_social_slider">mod_social_slider.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+	<updateservers>
+		<server type="extension" name="JJ Social Slider" priority="1">http://www.joomjunk.co.uk/updates/social_slider_update.xml</server>
+	</updateservers>
+ 
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_social_slider.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_social_slider.sys.ini</language>
+    </languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="Facebook">		
+				<field name="facebook" default="1" type="radio" label="JJ_SOCIAL_SLIDER_FACEBOOK" description="JJ_SOCIAL_SLIDER_FACEBOOK_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="facebook_link" default="http://facebook.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_FACEBOOK_LINK" description="JJ_SOCIAL_SLIDER_FACEBOOK_LINK_DESC" />
+			</fieldset>
+				
+			<fieldset name="Twitter">
+				<field name="twitter" default="1" type="radio" label="JJ_SOCIAL_SLIDER_TWITTER" description="JJ_SOCIAL_SLIDER_TWITTER_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="twitter_link" default="http://twitter.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TWITTER_LINK" description="JJ_SOCIAL_SLIDER_TWITTER_LINK_DESC" />
+			</fieldset>
+				
+			<fieldset name="Google+">	
+				<field name="google" default="1" type="radio" label="JJ_SOCIAL_SLIDER_GOOGLE" description="JJ_SOCIAL_SLIDER_GOOGLE_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="google_link" default="http://plus.google.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_GOOGLE_LINK" description="JJ_SOCIAL_SLIDER_GOOGLE_LINK_DESC" />
+			</fieldset>
+				
+			<fieldset name="MySpace">	
+				<field name="myspace" default="1" type="radio" label="JJ_SOCIAL_SLIDER_MYSPACE" description="JJ_SOCIAL_SLIDER_MYSPACE_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="myspace_link" default="http://myspace.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_MYSPACE_LINK" description="JJ_SOCIAL_SLIDER_MYSPACE_LINK_DESC" />
+			</fieldset>
+				
+			<fieldset name="Youtube">	
+				<field name="youtube" default="1" type="radio" label="JJ_SOCIAL_SLIDER_YOUTUBE" description="JJ_SOCIAL_SLIDER_YOUTUBE_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="youtube_link" default="http://youtube.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_YOUTUBE_LINK" description="JJ_SOCIAL_SLIDER_YOUTUBE_LINK_DESC" />
+			</fieldset>
+				
+			<fieldset name="Linkedin">	
+				<field name="linkedin" default="1" type="radio" label="JJ_SOCIAL_SLIDER_LINKEDIN" description="JJ_SOCIAL_SLIDER_LINKEDIN_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="linkedin_link" default="http://linkedin.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_LINKEDIN_LINK" description="JJ_SOCIAL_SLIDER_LINKEDIN_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Steam">	
+				<field name="steam" default="1" type="radio" label="JJ_SOCIAL_SLIDER_STEAM" description="JJ_SOCIAL_SLIDER_STEAM_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="steam_link" default="http://steam.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_STEAM_LINK" description="JJ_SOCIAL_SLIDER_STEAM_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Last.FM">	
+				<field name="lastfm" default="1" type="radio" label="JJ_SOCIAL_SLIDER_LASTFM" description="JJ_SOCIAL_SLIDER_LASTFM_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="lastfm_link" default="http://last.fm" type="text" size="50" label="JJ_SOCIAL_SLIDER_LASTFM_LINK" description="JJ_SOCIAL_SLIDER_LASTFM_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Pinterest">	
+				<field name="pinterest" default="1" type="radio" label="JJ_SOCIAL_SLIDER_PINTEREST" description="JJ_SOCIAL_SLIDER_PINTEREST_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="pinterest_link" default="http://pinterest.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_PINTEREST_LINK" description="JJ_SOCIAL_SLIDER_PINTEREST_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Soundcloud">	
+				<field name="soundcloud" default="1" type="radio" label="JJ_SOCIAL_SLIDER_SOUNDCLOUD" description="JJ_SOCIAL_SLIDER_SOUNDCLOUD_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="soundcloud_link" default="http://soundcloud.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_SOUNDCLOUD_LINK" description="JJ_SOCIAL_SLIDER_SOUNDCLOUD_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Tumblr">	
+				<field name="tumblr" default="1" type="radio" label="JJ_SOCIAL_SLIDER_TUMBLR" description="JJ_SOCIAL_SLIDER_TUMBLR_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="tumblr_link" default="http://tumblr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TUMBLR_LINK" description="JJ_SOCIAL_SLIDER_TUMBLR_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Github">	
+				<field name="github" default="1" type="radio" label="JJ_SOCIAL_SLIDER_GITHUB" description="JJ_SOCIAL_SLIDER_GITHUB_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="github_link" default="http://github.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_GITHUB_LINK" description="JJ_SOCIAL_SLIDER_GITHUB_LINK_DESC" />
+			</fieldset>
+			
+			<fieldset name="Flickr">	
+				<field name="flickr" default="1" type="radio" label="JJ_SOCIAL_SLIDER_FLICKR" description="JJ_SOCIAL_SLIDER_FLICKR_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="flickr_link" default="http://flickr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_FLICKR_LINK" description="JJ_SOCIAL_SLIDER_FLICKR_LINK_DESC" />
+			</fieldset>	
+			
+			<fieldset name="RSS">	
+				<field name="rss" default="1" type="radio" label="JJ_SOCIAL_SLIDER_RSS" description="JJ_SOCIAL_SLIDER_RSS_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="rss_link" default="http://link-to-rss-feed.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_RSS_LINK" description="JJ_SOCIAL_SLIDER_RSS_LINK_DESC" />
+			</fieldset>	
+			
+			<fieldset name="VIMEO">	
+				<field name="vimeo" default="1" type="radio" label="JJ_SOCIAL_SLIDER_VIMEO" description="JJ_SOCIAL_SLIDER_VIMEO_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="vimeo_link" default="http://vimeo.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_VIMEO_LINK" description="JJ_SOCIAL_SLIDER_VIMEO_LINK_DESC" />
+			</fieldset>	
+			
+			<fieldset name="CUSTOM1">	
+				<field name="custom1" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM1" description="JJ_SOCIAL_SLIDER_CUSTOM1_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="custom1_text" default="Follow via Custom 1" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM1_LINK_DESC" />
+				<field name="custom1_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM1_COLOUR_DESC" />
+				<field name="custom1_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM1_LINK_DESC" />
+				<field name="custom1_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM1_IMAGE_DESC" />
+			</fieldset>	
+			
+			<fieldset name="CUSTOM2">	
+				<field name="custom2" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM2" description="JJ_SOCIAL_SLIDER_CUSTOM2_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="custom2_text" default="Follow via Custom 2" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM2_LINK_DESC" />
+				<field name="custom2_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM2_COLOUR_DESC" />
+				<field name="custom2_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM2_LINK_DESC" />
+				<field name="custom2_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM2_IMAGE_DESC" />
+			</fieldset>	
+			
+			<fieldset name="CUSTOM3">	
+				<field name="custom3" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM3" description="JJ_SOCIAL_SLIDER_CUSTOM3_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="custom3_text" default="Follow via Custom 3" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM3_LINK_DESC" />
+				<field name="custom3_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM3_COLOUR_DESC" />
+				<field name="custom3_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM3_LINK_DESC" />
+				<field name="custom3_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE_DESC" />
+			</fieldset>	
+			
+			<fieldset name="CUSTOM4">	
+				<field name="custom4" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM4" description="JJ_SOCIAL_SLIDER_CUSTOM4_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="custom4_text" default="Follow via Custom 4" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM4_LINK_DESC" />
+				<field name="custom4_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM4_COLOUR_DESC" />
+				<field name="custom4_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM4_LINK_DESC" />
+				<field name="custom4_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE_DESC" />
+			</fieldset>	
+			
+			<fieldset name="CUSTOM5">	
+				<field name="custom5" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM5" description="JJ_SOCIAL_SLIDER_CUSTOM5_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
+				<field name="custom5_text" default="Follow via Custom 5" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM5_LINK_DESC" />
+				<field name="custom5_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM5_COLOUR_DESC" />
+				<field name="custom5_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM5_LINK_DESC" />
+				<field name="custom5_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM5_IMAGE_DESC" />
+			</fieldset>	
+			
+			<fieldset name="Other">	
+				<field name="slide_colour" type="text" default="33353B" label="JJ_SOCIAL_SLIDER_SLIDE_COLOUR" description="JJ_SOCIAL_SLIDER_SLIDE_COLOUR_DESC" />
+				<field name="position" type="list" default="left" label="JJ_SOCIAL_SLIDER_POSITION" description="JJ_SOCIAL_SLIDER_POSITION_DESC">
+					<option value="left">JJ_SOCIAL_SLIDER_LEFT</option>
+					<option value="right">JJ_SOCIAL_SLIDER_RIGHT</option>
+				</field>
+				<field name="top" type="text" default="10" label="JJ_SOCIAL_SLIDER_TOP" description="JJ_SOCIAL_SLIDER_TOP_DESC" />		
+				<field name="disable" type="list" default="0" label="JJ_SOCIAL_SLIDER_DISABLE" description="JJ_SOCIAL_SLIDER_DISABLE_DESC">
+					<option value="0">JJ_SOCIAL_SLIDER_NO_DISABLE</option>
+					<option value="1">JJ_SOCIAL_SLIDER_MOB_ONLY</option>
+					<option value="2">JJ_SOCIAL_SLIDER_MOB_TABLET</option>
+				</field>
+				<field name="icon_colour" type="radio" default="white" label="JJ_SOCIAL_SLIDER_ICON_COLOUR" description="JJ_SOCIAL_SLIDER_ICON_COLOUR_DESC">
+					<option value="white">JJ_SOCIAL_SLIDER_ICONS_WHITE</option>
+					<option value="black">JJ_SOCIAL_SLIDER_ICONS_BLACK</option>
+				</field>				
+			</fieldset>
+		</fields>
+	</config>
+ 
+</extension>
