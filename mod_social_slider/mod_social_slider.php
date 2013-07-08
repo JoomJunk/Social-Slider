@@ -10,6 +10,22 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $document = JFactory::getDocument();
+
+if($params->get('jquery_css') == 0){
+	if($params->get('jquery') == 0){
+		if(!JFactory::getApplication()->get('jquery')){
+			JFactory::getApplication()->set('jquery',true);
+			$document->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js");
+		}
+	}
+	elseif($params->get('jquery') == 1){
+		if(!JFactory::getApplication()->get('jquery')){
+			JFactory::getApplication()->set('jquery',true);
+			$document->addScript(JUri::root() . "modules/mod_social_slider/assets/jquery.js");
+		}
+	}
+}
+
 $style1 =  'ul#jj_sl_navigation li a {'
 		. 'background-color:#' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $params->get('position') . ';'
@@ -28,14 +44,32 @@ if ($params->get('disable') == 2) {
 $document->addStyleDeclaration($mobile_tablet);
 }
 if ($params->get('position') == "left") {
-	$css='ul#jj_sl_navigation li { '
-		. 'margin-left: -140px;'
-		. '-webkit-transition: margin-left 0.3s;'
-		. '-moz-transition: margin-left 0.3s;'
-		. '-ms-transition: margin-left 0.3s;'
-		. '-o-transition: margin-left 0.3s;'
-		. 'transition: margin-left 0.3s;'
-		. '}';
+	if($params->get('jquery_css') == 0){
+		$js_left = '
+		$(function() {
+			$("#jj_sl_navigation a").css("marginLeft", "-140px")
+			$("#jj_sl_navigation > li").hover(
+				function () {
+					$("a",$(this)).stop().animate({"marginLeft":"-2px"},200);
+				},
+				function () {
+					$("a",$(this)).stop().animate({"marginLeft":"-140px"},200);
+				}
+			);
+		});
+		';
+		$document->addScriptDeclaration($js_left);
+	}
+	if($params->get('jquery_css') == 1){
+		$css='ul#jj_sl_navigation li { '
+			. 'margin-left: -140px;'
+			. '-webkit-transition: margin-left 0.3s;'
+			. '-moz-transition: margin-left 0.3s;'
+			. '-ms-transition: margin-left 0.3s;'
+			. '-o-transition: margin-left 0.3s;'
+			. 'transition: margin-left 0.3s;'
+			. '}';
+	}
 	$style = 'ul#jj_sl_navigation { '
 		. $params->get('position') .':0px;'
 		. 'top:' . $params->get('top') . 'px;'
@@ -130,16 +164,35 @@ if ($params->get('position') == "left") {
 		;
 } 
 else if ($params->get('position') == "right") {
-	$css= 'ul#jj_sl_navigation li { '
-		. 'right: -138px;'
-		. 'position:relative;'
-		. '-webkit-transition: right 0.3s;'
-		. '-moz-transition: right 0.3s;'
-		. '-ms-transition: right 0.3s;'
-		. '-o-transition: right 0.3s;'
-		. 'transition: right 0.3s;'
-		. '}';
-		$margin='-2px';
+	if($params->get('jquery_css') == 0){
+		$js_right = '
+			$(function() {
+			$("#jj_sl_navigation a").css("marginLeft", "140px")
+			$("#jj_sl_navigation > li").hover(
+				function () {
+					$("a",$(this)).stop().animate({"marginLeft":"2px"},200);
+				},
+				function () {
+					$("a",$(this)).stop().animate({"marginLeft":"140px"},200);
+				}
+			);
+		});
+		';
+		$css = 'ul#jj_sl_navigation li {left: 140px;position: relative;}';
+		$document->addScriptDeclaration($js_right);
+	}
+	if($params->get('jquery_css') == 1){
+		$css= 'ul#jj_sl_navigation li { '
+			. 'right: -138px;'
+			. 'position:relative;'
+			. '-webkit-transition: right 0.3s;'
+			. '-moz-transition: right 0.3s;'
+			. '-ms-transition: right 0.3s;'
+			. '-o-transition: right 0.3s;'
+			. 'transition: right 0.3s;'
+			. '}';
+			$margin='-2px';
+	}
 $style = 'ul#jj_sl_navigation { '
 			. $params->get('position') .':0px;'
 			. 'top:' . $params->get('top') . 'px;'
