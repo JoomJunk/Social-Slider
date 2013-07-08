@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-3.0.html</license> 
 	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
 	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
-	<version>1.2.3</version> 
+	<version>1.3.0</version> 
 	<description>JJ_SOCIAL_SLIDER_DESC</description>
 	
 	<files>
@@ -218,6 +218,15 @@
 				<field name="icon_colour" type="radio" default="white" label="JJ_SOCIAL_SLIDER_ICON_COLOUR" description="JJ_SOCIAL_SLIDER_ICON_COLOUR_DESC">
 					<option value="white">JJ_SOCIAL_SLIDER_ICONS_WHITE</option>
 					<option value="black">JJ_SOCIAL_SLIDER_ICONS_BLACK</option>
+				</field>
+				<field name="jquery_css" type="radio" default="0" label="JJ_SOCIAL_SLIDER_JQUERY_CSS" description="JJ_SOCIAL_SLIDER_JQUERY_CSS_DESC">
+					<option value="0">JJ_SOCIAL_SLIDER_JQUERY</option>
+					<option value="1">JJ_SOCIAL_SLIDER_CSS</option>
+				</field>
+				<field name="jquery" type="list" default="0" label="JJ_SOCIAL_SLIDER_JQUERY" description="JJ_SOCIAL_SLIDER_JQUERY_DESC">
+					<option value="0">JJ_SOCIAL_SLIDER_JQUERY_REMOTE</option>
+					<option value="1">JJ_SOCIAL_SLIDER_JQUERY_LOCAL</option>
+					<option value="2">JJ_SOCIAL_SLIDER_JQUERY_NO</option>
 				</field>				
 			</fieldset>
 		</fields>
