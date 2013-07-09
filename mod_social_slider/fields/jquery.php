@@ -27,9 +27,9 @@ class JFormFieldjQuery extends JFormField
 	protected $type = 'jQuery';
 
 	/**
-	 * Method to get the radio button field input markup.
+	 * Method to get the list field input markup.
 	 *
-	 * @return  string  The field input markup.
+	 * @return  string  The field input markup if version is less than Joomla 3.0, else text string.
 	 *
 	 * @since   1.3.0
 	 */
@@ -39,38 +39,38 @@ class JFormFieldjQuery extends JFormField
 			return '<p>'.JText::_('JJ_SOCIAL_SLIDER_NOJQUERY_30').'</p>';
 		} else {
 			$html = array();
+			$attr = '';
 
 			// Initialize some field attributes.
-			$class = $this->element['class'] ? ' class="radio ' . (string) $this->element['class'] . '"' : ' class="radio"';
+			$attr .= $this->element['class'] ? ' class="' . (string) $this->element['class'] . '"' : '';
 
-			// Start the radio field output.
-			$html[] = '<fieldset id="' . $this->id . '"' . $class . '>';
-
-			// Get the field options.
-			$options = $this->getOptions();
-
-			// Build the radio field output.
-			foreach ($options as $i => $option)
+			// To avoid user's confusion, readonly="true" should imply disabled="true".
+			if ((string) $this->element['readonly'] == 'true' || (string) $this->element['disabled'] == 'true')
 			{
-
-				// Initialize some option attributes.
-				$checked = ((string) $option->value == (string) $this->value) ? ' checked="checked"' : '';
-				$class = !empty($option->class) ? ' class="' . $option->class . '"' : '';
-				$disabled = !empty($option->disable) ? ' disabled="disabled"' : '';
-				$required = !empty($option->required) ? ' required="required" aria-required="true"' : '';
-
-				// Initialize some JavaScript option attributes.
-				$onclick = !empty($option->onclick) ? ' onclick="' . $option->onclick . '"' : '';
-
-				$html[] = '<input type="radio" id="' . $this->id . $i . '" name="' . $this->name . '" value="'
-					. htmlspecialchars($option->value, ENT_COMPAT, 'UTF-8') . '"' . $checked . $class . $onclick . $disabled . $required . '/>';
-
-				$html[] = '<label for="' . $this->id . $i . '"' . $class . '>'
-					. JText::alt($option->text, preg_replace('/[^a-zA-Z0-9_\-]/', '_', $this->fieldname)) . '</label>';
+				$attr .= ' disabled="disabled"';
 			}
 
-			// End the radio field output.
-			$html[] = '</fieldset>';
+			$attr .= $this->element['size'] ? ' size="' . (int) $this->element['size'] . '"' : '';
+			$attr .= $this->multiple ? ' multiple="multiple"' : '';
+			$attr .= $this->required ? ' required="required" aria-required="true"' : '';
+
+			// Initialize JavaScript field attributes.
+			$attr .= $this->element['onchange'] ? ' onchange="' . (string) $this->element['onchange'] . '"' : '';
+
+			// Get the field options.
+			$options = (array) $this->getOptions();
+
+			// Create a read-only list (no name) with a hidden input to store the value.
+			if ((string) $this->element['readonly'] == 'true')
+			{
+				$html[] = JHtml::_('select.genericlist', $options, '', trim($attr), 'value', 'text', $this->value, $this->id);
+				$html[] = '<input type="hidden" name="' . $this->name . '" value="' . $this->value . '"/>';
+			}
+			// Create a regular list.
+			else
+			{
+				$html[] = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
+			}
 
 			return implode($html);
 		}
@@ -98,7 +98,8 @@ class JFormFieldjQuery extends JFormField
 
 			// Create a new option object based on the <option /> element.
 			$tmp = JHtml::_(
-				'select.option', (string) $option['value'], trim((string) $option), 'value', 'text',
+				'select.option', (string) $option['value'],
+				JText::alt(trim((string) $option), preg_replace('/[^a-zA-Z0-9_\-]/', '_', $this->fieldname)), 'value', 'text',
 				((string) $option['disabled'] == 'true')
 			);
 
