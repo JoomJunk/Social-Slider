@@ -14,6 +14,7 @@
 		<filename module="mod_social_slider">mod_social_slider.php</filename>
 		<filename>index.html</filename>
 		<folder>assets</folder>
+		<folder>fields</folder>
 		<folder>tmpl</folder>
 	</files>
 	
@@ -203,7 +204,7 @@
 				<field name="custom5_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM5_IMAGE_DESC" />
 			</fieldset>	
 			
-			<fieldset name="Other">	
+			<fieldset name="Other" addfieldpath="/modules/mod_social_slider/fields">	
 				<field name="slide_colour" type="text" default="33353B" label="JJ_SOCIAL_SLIDER_SLIDE_COLOUR" description="JJ_SOCIAL_SLIDER_SLIDE_COLOUR_DESC" />
 				<field name="position" type="list" default="left" label="JJ_SOCIAL_SLIDER_POSITION" description="JJ_SOCIAL_SLIDER_POSITION_DESC">
 					<option value="left">JJ_SOCIAL_SLIDER_LEFT</option>
@@ -223,11 +224,11 @@
 					<option value="0">JJ_SOCIAL_SLIDER_JQUERY</option>
 					<option value="1">JJ_SOCIAL_SLIDER_CSS</option>
 				</field>
-				<field name="jquery" type="list" default="0" label="JJ_SOCIAL_SLIDER_JQUERY" description="JJ_SOCIAL_SLIDER_JQUERY_DESC">
+				<field name="jquery" type="jQuery" default="0" label="JJ_SOCIAL_SLIDER_JQUERY" description="JJ_SOCIAL_SLIDER_JQUERY_DESC">
 					<option value="0">JJ_SOCIAL_SLIDER_JQUERY_REMOTE</option>
 					<option value="1">JJ_SOCIAL_SLIDER_JQUERY_LOCAL</option>
 					<option value="2">JJ_SOCIAL_SLIDER_JQUERY_NO</option>
-				</field>				
+				</field>
 			</fieldset>
 		</fields>
 	</config>
