@@ -11,7 +11,6 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $document = JFactory::getDocument();
 
-
 if($params->get('jquery_css') == 0){
 	if(version_compare(JVERSION,'3.0.0','ge')) {
 		JHtml::_('jquery.framework');
@@ -53,18 +52,21 @@ $document->addStyleDeclaration($mobile_tablet);
 if ($params->get('position') == "left") {
 	if($params->get('jquery_css') == 0){
 		$js_left = '
-		$(function() {
-			$("#jj_sl_navigation a").css("marginLeft", "-140px")
-			$("#jj_sl_navigation > li").hover(
-				function () {
-					$("a",$(this)).stop().animate({"marginLeft":"-2px"},200);
-				},
-				function () {
-					$("a",$(this)).stop().animate({"marginLeft":"-140px"},200);
-				}
-			);
-		});
+		(function($){
+			$(function() {
+				$("#jj_sl_navigation a").css("marginLeft", "-140px")
+				$("#jj_sl_navigation > li").hover(
+					function () {
+						$("a",$(this)).stop().animate({"marginLeft":"-2px"},200);
+					},
+					function () {
+						$("a",$(this)).stop().animate({"marginLeft":"-140px"},200);
+					}
+				);
+			});
+		})(jQuery);
 		';
+		$css = '';
 		$document->addScriptDeclaration($js_left);
 	}
 	if($params->get('jquery_css') == 1){
@@ -173,17 +175,19 @@ if ($params->get('position') == "left") {
 else if ($params->get('position') == "right") {
 	if($params->get('jquery_css') == 0){
 		$js_right = '
+		(function($){
 			$(function() {
-			$("#jj_sl_navigation a").css("marginLeft", "140px")
-			$("#jj_sl_navigation > li").hover(
-				function () {
-					$("a",$(this)).stop().animate({"marginLeft":"2px"},200);
-				},
-				function () {
-					$("a",$(this)).stop().animate({"marginLeft":"140px"},200);
-				}
-			);
-		});
+				$("#jj_sl_navigation a").css("marginLeft", "140px")
+				$("#jj_sl_navigation > li").hover(
+					function () {
+						$("a",$(this)).stop().animate({"marginLeft":"2px"},200);
+					},
+					function () {
+						$("a",$(this)).stop().animate({"marginLeft":"140px"},200);
+					}
+				);
+			});
+		})(jQuery);
 		';
 		$css = 'ul#jj_sl_navigation li {left: 140px;position: relative;}';
 		$document->addScriptDeclaration($js_right);
