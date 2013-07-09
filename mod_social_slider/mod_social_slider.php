@@ -11,12 +11,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $document = JFactory::getDocument();
 
-if(version_compare(JVERSION,'3.0.0','ge')) {
-	JHtml::_('jquery.framework');
-}
-else
-{
-	if($params->get('jquery_css') == 0){
+
+if($params->get('jquery_css') == 0){
+	if(version_compare(JVERSION,'3.0.0','ge')) {
+		JHtml::_('jquery.framework');
+	}
+	else
+	{
 		if($params->get('jquery') == 0){
 			if(!JFactory::getApplication()->get('jquery')){
 				JFactory::getApplication()->set('jquery',true);
