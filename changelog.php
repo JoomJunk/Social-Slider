@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.3.0
++ Add ability to use jQuery instead of CSS3 animations
+
 Version 1.2.3
 + Add 5 custom slider tabs
 ^ removed unnecessary PHP tags 
