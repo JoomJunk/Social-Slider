@@ -216,6 +216,8 @@
 					<option value="1">JJ_SOCIAL_SLIDER_MOB_ONLY</option>
 					<option value="2">JJ_SOCIAL_SLIDER_MOB_TABLET</option>
 				</field>
+				<field name="tablet_width" type="text" default="768px" label="JJ_SOCIAL_SLIDER_TABLET_WIDTH" description="JJ_SOCIAL_SLIDER_TABLET_WIDTH_DESC" />
+				<field name="mobile_width" type="text" default="480px" label="JJ_SOCIAL_SLIDER_MOBILE_WIDTH" description="JJ_SOCIAL_SLIDER_MOBILE_WIDTH_DESC" />
 				<field name="icon_colour" type="radio" default="white" label="JJ_SOCIAL_SLIDER_ICON_COLOUR" description="JJ_SOCIAL_SLIDER_ICON_COLOUR_DESC">
 					<option value="white">JJ_SOCIAL_SLIDER_ICONS_WHITE</option>
 					<option value="black">JJ_SOCIAL_SLIDER_ICONS_BLACK</option>
@@ -228,6 +230,10 @@
 					<option value="0">JJ_SOCIAL_SLIDER_JQUERY_REMOTE</option>
 					<option value="1">JJ_SOCIAL_SLIDER_JQUERY_LOCAL</option>
 					<option value="2">JJ_SOCIAL_SLIDER_JQUERY_NO</option>
+				</field>
+				<field name="tab" type="radio" default="0" label="JJ_SOCIAL_SLIDER_TAB" description="JJ_SOCIAL_SLIDER_TAB_DESC">
+					<option value="0">JJ_SOCIAL_SLIDER_TAB_NEW</option>
+					<option value="1">JJ_SOCIAL_SLIDER_TAB_SAME</option>
 				</field>
 			</fieldset>
 		</fields>
