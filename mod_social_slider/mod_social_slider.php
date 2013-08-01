@@ -38,13 +38,13 @@ $style1 =  'ul#jj_sl_navigation li a {'
 		. '}';
 $document->addStyleDeclaration($style1);
 if ($params->get('disable') == 1) {		
-	$mobile =  '@media screen and (max-width: 480px){'
+	$mobile =  '@media screen and (max-width: ' . $params->get("mobile_width", "480px") . '){'
 		. 'ul#jj_sl_navigation { display: none; }'
 		. '}';
 $document->addStyleDeclaration($mobile);
 }
 if ($params->get('disable') == 2) {		
-	$mobile_tablet =  '@media screen and (max-width: 768px){'
+	$mobile_tablet =  '@media screen and (max-width: ' . $params->get("tablet_width", "768px") . '){'
 		. 'ul#jj_sl_navigation { display: none; }'
 		. '}';
 $document->addStyleDeclaration($mobile_tablet);
