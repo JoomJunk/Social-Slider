@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $document = JFactory::getDocument();
 $document->addStyleSheet(JURI::root() . "modules/mod_social_slider/assets/style.css");
 
-if($params->get('tab') == 0){
+if($params->get('tab', '0') == 0){
 	$target = 'target="_blank"';
 }
 else {
