@@ -45,7 +45,7 @@
 				<field name="twitter_link" default="http://twitter.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TWITTER_LINK" description="JJ_SOCIAL_SLIDER_TWITTER_LINK_DESC" />
 			</fieldset>
 				
-			<fieldset name="Google+">	
+			<fieldset name="Googles">	
 				<field name="google" default="1" type="radio" label="JJ_SOCIAL_SLIDER_GOOGLE" description="JJ_SOCIAL_SLIDER_GOOGLE_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
@@ -85,7 +85,7 @@
 				<field name="steam_link" default="http://steam.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_STEAM_LINK" description="JJ_SOCIAL_SLIDER_STEAM_LINK_DESC" />
 			</fieldset>
 			
-			<fieldset name="Last.FM">	
+			<fieldset name="LastFM">	
 				<field name="lastfm" default="1" type="radio" label="JJ_SOCIAL_SLIDER_LASTFM" description="JJ_SOCIAL_SLIDER_LASTFM_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
