@@ -1,5 +1,5 @@
 <?php
-// no direct access
+// No direct access
 die('Restricted access');
 
 ?>
@@ -14,6 +14,12 @@ $ -> Language fix or change
 ^ -> Change
 - -> Removed
 ! -> Note
+
+Version 1.3.1
+# Bug fix for some users unable to open LastFM and Google+ tabs
+^ PHPCS fixes to Joomla Standards
++ Max-width and target parameters added
++ Add parameter for new tab or same page
 
 Version 1.3.0
 + Added ability to use jQuery instead of CSS3 animations
