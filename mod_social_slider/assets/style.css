@@ -16,6 +16,7 @@ ul#jj_sl_navigation {
 ul#jj_sl_navigation li {
 	padding: 1px 0px 1px 0px;
     overflow:hidden;
+	direction: ltr;
 }
 
 ul#jj_sl_navigation li a {
