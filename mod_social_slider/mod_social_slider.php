@@ -9,6 +9,24 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
+if ($params->get('position', 'left') == 'rtl')
+{
+	$RTL = JFactory::getLanguage()->isRTL();
+
+	if ($RTL)
+	{
+		$position = 'right';
+	}
+	else
+	{
+		$position = 'left';
+	}
+}
+else
+{
+	$position = $params->get('position', 'left');
+}
+
 $document = JFactory::getDocument();
 
 if ($params->get('jquery_css') == 0)
@@ -40,7 +58,7 @@ if ($params->get('jquery_css') == 0)
 
 $style1 = 'ul#jj_sl_navigation li a {'
 		. 'background-color:#' . $params->get('slide_colour') . ';'
-		. 'text-align:' . $params->get('position') . ';'
+		. 'text-align:' . $position . ';'
 		. '}';
 $document->addStyleDeclaration($style1);
 
@@ -60,7 +78,7 @@ if ($params->get('disable') == 2)
 	$document->addStyleDeclaration($mobile_tablet);
 }
 
-if ($params->get('position') == "left")
+if ($position == "left")
 {
 	if ($params->get('jquery_css') == 0)
 	{
@@ -96,7 +114,7 @@ if ($params->get('position') == "left")
 	}
 
 	$style = 'ul#jj_sl_navigation { '
-		. $params->get('position') . ':0px;'
+		. $position . ':0px;'
 		. 'top:' . $params->get('top') . 'px;'
 		. '}'
 		. 'ul#jj_sl_navigation li:hover { '
@@ -187,7 +205,7 @@ if ($params->get('position') == "left")
 		. 'background-image: url(' . JURI::root() . 'modules/mod_social_slider/assets/icons/' . $params->get('custom5_image') . ');'
 		. '}';
 }
-elseif ($params->get('position') == "right")
+elseif ($position == "right")
 {
 	if ($params->get('jquery_css') == 0)
 	{
@@ -206,7 +224,7 @@ elseif ($params->get('position') == "right")
 			});
 		})(jQuery);
 		';
-		$css = 'ul#jj_sl_navigation li {left: 140px;position: relative;}';
+		$css = 'ul#jj_sl_navigation li {position: relative;} ul#jj_sl_navigation{right: -140px;}';
 		$document->addScriptDeclaration($js_right);
 	}
 
@@ -225,7 +243,7 @@ elseif ($params->get('position') == "right")
 	}
 
 $style = 'ul#jj_sl_navigation { '
-			. $params->get('position') . ':0px;'
+			. $position . ':0px;'
 			. 'top:' . $params->get('top') . 'px;'
 			. '}'
 			. 'ul#jj_sl_navigation li:hover { '
