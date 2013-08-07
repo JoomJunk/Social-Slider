@@ -9,8 +9,6 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
-
-
 if ($params->get('position', 'left') == 'rtl')
 {
 	$RTL = JFactory::getLanguage()->isRTL();
