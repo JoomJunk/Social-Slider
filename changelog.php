@@ -15,10 +15,13 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.3.2
++ Ability to support RTL templates improved with dedicated option
+
 Version 1.3.1
 # Bug fix for some users unable to open LastFM and Google+ tabs
 ^ PHPCS fixes to Joomla Standards
-+ Max-width and target parameters added
++ Max-width parameters added
 + Add parameter for new tab or same page
 
 Version 1.3.0

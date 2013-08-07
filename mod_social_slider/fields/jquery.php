@@ -1,10 +1,10 @@
 <?php
 /**
- * @package     JoomJunk.Shoutbox
- *
- * @copyright   Copyright (C) 2011 - 2013 JoomJunk. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE
- */
+* @package    JJ_Social_Slider
+* @author     JoomJunk <admin@joomjunk.co.uk>
+* @copyright  Copyright (C) 2011 - 2013 JoomJunk. All Rights Reserved
+* @license    GPL v3.0 or later http://www.gnu.org/licenses/gpl-3.0.html
+*/
 
 defined('_JEXEC') or die('Restricted access');
 
@@ -12,9 +12,8 @@ defined('_JEXEC') or die('Restricted access');
  * Form Field class for JoomJunk.
  * Provides radio button inputs for the jQuery insertation in Joomla 2.5 only
  *
- * @package     JoomJunk.Shoutbox
- * @subpackage  Form
- * @since       2.0
+ * @package     JJ_Social_Slider
+ * @since       1.3.0
  */
 class JFormFieldjQuery extends JFormField
 {
