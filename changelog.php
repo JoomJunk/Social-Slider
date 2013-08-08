@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.3.3
+^ Slide colour now a colour form field
+
 Version 1.3.2
 + Ability to support RTL templates improved with dedicated option
 
