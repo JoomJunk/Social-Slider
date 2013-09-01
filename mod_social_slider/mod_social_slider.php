@@ -57,7 +57,7 @@ if ($params->get('jquery_css') == 0)
 }
 
 $style1 = 'ul#jj_sl_navigation li a {'
-		. 'background-color:#' . $params->get('slide_colour') . ';'
+		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
 		. '}';
 $document->addStyleDeclaration($style1);
