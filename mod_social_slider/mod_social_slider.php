@@ -239,7 +239,6 @@ elseif ($position == "right")
 			. '-o-transition: right 0.3s;'
 			. 'transition: right 0.3s;'
 			. '}';
-			$margin = '-2px';
 	}
 
 $style = 'ul#jj_sl_navigation { '
@@ -251,7 +250,6 @@ $style = 'ul#jj_sl_navigation { '
 			. '}'
 			. 'ul#jj_sl_navigation li a { '
 			. 'padding: 11px 10px 11px 0px;'
-			. 'margin-right:' . $margin . ';'
 			. '}'
 			. 'ul#jj_sl_navigation .facebook a {'
 			. 'background-position: 4px 50%;'
