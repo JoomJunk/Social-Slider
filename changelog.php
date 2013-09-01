@@ -17,6 +17,9 @@ $ -> Language fix or change
 
 Version 1.3.3
 ^ Slide colour now a colour form field
+# Undefined variable when module on right hand side of screen and jQuery enabled
+$ Language string changes RTL settings
+^ Google jQuery version updated to 1.10.2
 
 Version 1.3.2
 + Ability to support RTL templates improved with dedicated option

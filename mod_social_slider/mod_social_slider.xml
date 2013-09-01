@@ -7,8 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-3.0.html</license> 
 	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
 	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
-	<version>1.3.2</version>
-	<description>JJ_SOCIAL_SLIDER_DESC</description>
+	<version>1.3.3</version>
 	
 	<files>
 		<filename module="mod_social_slider">mod_social_slider.php</filename>
@@ -21,7 +20,9 @@
 	<updateservers>
 		<server type="extension" name="JJ Social Slider" priority="1">http://www.joomjunk.co.uk/updates/social_slider_update.xml</server>
 	</updateservers>
- 
+
+	<scriptfile>script.php</scriptfile>
+
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_social_slider.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_social_slider.sys.ini</language>
@@ -205,7 +206,7 @@
 			</fieldset>	
 			
 			<fieldset name="Other" addfieldpath="/modules/mod_social_slider/fields">	
-				<field name="slide_colour" type="color" default="33353B" label="JJ_SOCIAL_SLIDER_SLIDE_COLOUR" description="JJ_SOCIAL_SLIDER_SLIDE_COLOUR_DESC" />
+				<field name="slide_colour" type="color" default="#33353B" label="JJ_SOCIAL_SLIDER_SLIDE_COLOUR" description="JJ_SOCIAL_SLIDER_SLIDE_COLOUR_DESC" />
 				<field name="position" type="list" default="left" label="JJ_SOCIAL_SLIDER_POSITION" description="JJ_SOCIAL_SLIDER_POSITION_DESC">
 					<option value="left">JJ_SOCIAL_SLIDER_LEFT</option>
 					<option value="right">JJ_SOCIAL_SLIDER_RIGHT</option>
