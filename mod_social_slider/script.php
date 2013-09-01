@@ -267,11 +267,6 @@ class Mod_Social_SliderInstallerScript
 
 			// Create array of params to change
 			$colours = array();
-			$colours['custom1_colour'] = '#' . $this->getParam('custom1_colour', $module);
-			$colours['custom2_colour'] = '#' . $this->getParam('custom2_colour', $module);
-			$colours['custom3_colour'] = '#' . $this->getParam('custom3_colour', $module);
-			$colours['custom4_colour'] = '#' . $this->getParam('custom4_colour', $module);
-			$colours['custom5_colour'] = '#' . $this->getParam('custom5_colour', $module);
 			$colours['slide_colour'] = '#' . $this->getParam('slide_colour', $module);
 
 			// Set the param values
