@@ -42,7 +42,7 @@ if ($params->get('jquery_css') == 0)
 			if (!JFactory::getApplication()->get('jquery'))
 			{
 				JFactory::getApplication()->set('jquery', true);
-				$document->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js");
+				$document->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js");
 			}
 		}
 		elseif ($params->get('jquery') == 1)
@@ -57,7 +57,7 @@ if ($params->get('jquery_css') == 0)
 }
 
 $style1 = 'ul#jj_sl_navigation li a {'
-		. 'background-color:#' . $params->get('slide_colour') . ';'
+		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
 		. '}';
 $document->addStyleDeclaration($style1);
