@@ -40,7 +40,7 @@ class Mod_Social_SliderInstallerScript
 	 *                                            , not uninstall)
 	 * @param   JInstallerAdapterModule  $parent  The class calling this method
 	 *
-	 * @return  mixed   void on success and false on failure
+	 * @return  void
 	 *
 	 * @since  1.3.3
 	 */
@@ -98,14 +98,14 @@ class Mod_Social_SliderInstallerScript
 	 * Gets each instance of a module in the #__modules table
 	 * For all other extensions see alternate query
 	 *
-	 * @param   string  $extensionType  The type of extension (Component, Module or Plugin)
+	 * @param   boolean  $isModule  True if the extension is a module as this can have multiple instances
 	 *
 	 * @return  array  An array of ID's of the extension
 	 *
 	 * @since  1.3.3
 	 * @see getExtensionInstance
 	 */
-	protected function getInstances($extensionType)
+	protected function getInstances($isModule = false)
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
@@ -113,7 +113,7 @@ class Mod_Social_SliderInstallerScript
 		// Select the item(s) and retrieve the id
 		$query->select($db->quoteName('id'));
 
-		if ($extensionType == 'module')
+		if ($isModule)
 		{
 			$query->from($db->quoteName('#__modules'))
 				->where('module = ' . $db->Quote($this->extension));
@@ -163,7 +163,7 @@ class Mod_Social_SliderInstallerScript
 	 * @param   string   $type         The type of change to be made to the param (edit/remove)
 	 * @param   integer  $id           The id of the item in the relevant table
 	 *
-	 * @return  mixed  false on failure, void otherwise
+	 * @return  boolean  true on success, false on failure
 	 */
 	protected function setParams($param_array = null, $type = 'edit', $id = 0)
 	{
@@ -212,6 +212,8 @@ class Mod_Social_SliderInstallerScript
 		{
 			$db->query();
 		}
+
+		return true;
 	}
 
 	/**
@@ -258,7 +260,7 @@ class Mod_Social_SliderInstallerScript
 		 * We have moved to use the colour form field so a hash must be applied
 		 * to the parameters for them to function as expected still.
 		 */
-		$modules = $this->getInstances('module');
+		$modules = $this->getInstances(true);
 
 		foreach ($modules as $module)
 		{
