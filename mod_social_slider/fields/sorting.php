@@ -42,7 +42,7 @@ class JFormFieldSorting extends JFormField
 			var group = $("#sortable").sortable({
 				pullPlaceholder: false,
 				onDrop: function (item, container, _super) {
-					$("#order").val(group.sortable("serialize").get().join("\n"))
+					$("#' . $this->id . '").val(group.sortable("serialize").get().join("\n"))
 					_super(item, container)
 				},
 				serialize: function (parent, children, isContainer) {
@@ -84,6 +84,6 @@ class JFormFieldSorting extends JFormField
 		  <li id="6">Flickr</li>
 		  <li id="7">RSS</li>
 		</ul>
-		<input type="hidden" name="sorting" id="order" />';
+		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
 	}
 }
