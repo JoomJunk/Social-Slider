@@ -34,6 +34,23 @@ class JFormFieldSorting extends JFormField
 	 */
 	protected function getInput()
 	{
+		$options = array(
+			1 => JText::_('COM_MODULES_FACEBOOK_FIELDSET_LABEL'),
+			2 => JText::_('COM_MODULES_TWITTER_FIELDSET_LABEL'),
+			3 => JText::_('COM_MODULES_GOOGLES_FIELDSET_LABEL'),
+			4 => JText::_('COM_MODULES_MYSPACE_FIELDSET_LABEL'),
+			5 => JText::_('COM_MODULES_YOUTUBE_FIELDSET_LABEL'),
+			6 => JText::_('COM_MODULES_LINKEDIN_FIELDSET_LABEL'),
+			7 => JText::_('COM_MODULES_STEAM_FIELDSET_LABEL'),
+			8 => JText::_('COM_MODULES_LASTFM_FIELDSET_LABEL'),
+			9 => JText::_('COM_MODULES_PINTEREST_FIELDSET_LABEL'),
+			10 => JText::_('COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL'),
+			11 => JText::_('COM_MODULES_TUMBLR_FIELDSET_LABEL'),
+			12 => JText::_('COM_MODULES_GITHUB_FIELDSET_LABEL'),
+			13 => JText::_('COM_MODULES_FLICKR_FIELDSET_LABEL'),
+			14 => JText::_('COM_MODULES_RSS_FIELDSET_LABEL'),
+			15 => JText::_('COM_MODULES_VIMEO_FIELDSET_LABEL'),
+		);
 		$document = JFactory::getDocument();
 
 		// Inject jQuery onto the page
@@ -87,16 +104,12 @@ class JFormFieldSorting extends JFormField
 			}
 		');
 
-		echo '
-		<ul id="sortable">
-		  <li id="1">Facebook</li>
-		  <li id="2">Twitter</li>
-		  <li id="3">Linked-In</li>
-		  <li id="4">GitHub</li>
-		  <li id="5">Google +</li>
-		  <li id="6">Flickr</li>
-		  <li id="7">RSS</li>
-		</ul>
+		echo '<ul id="sortable">';
+		  foreach ($options as $key => $val)
+		  {
+			  echo '<li id="' . $key . '">' . $val . '</li>';
+		  }
+		echo '</ul>
 		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
 	}
 }
