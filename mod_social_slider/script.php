@@ -52,7 +52,7 @@ class Mod_Social_SliderInstallerScript
 		// Abort if the module being installed is not newer than the currently installed version
 		if ($type == 'Update')
 		{
-			$manifest = $this->getItemArray('manifest_cache', '#__extensions', 'element', $this->extension);
+			$manifest = $this->getItemArray('manifest_cache', '#__extensions', 'element', JFactory::getDbo()->quote($this->extension));
 			$oldRelease = $manifest['version'];
 
 			if (version_compare($oldRelease, $this->release, '<'))
@@ -105,7 +105,7 @@ class Mod_Social_SliderInstallerScript
 	 * @since  1.3.3
 	 * @see getExtensionInstance
 	 */
-	protected function getInstances($isModule = false)
+	protected function getInstances($isModule)
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
@@ -116,12 +116,12 @@ class Mod_Social_SliderInstallerScript
 		if ($isModule)
 		{
 			$query->from($db->quoteName('#__modules'))
-				->where('module = ' . $db->Quote($this->extension));
+				->where($db->quoteName('module') . ' = ' . $db->Quote($this->extension));
 		}
 		else
 		{
 			$query->from($db->quoteName('#__extensions'))
-				->where('element = ' . $db->Quote($this->extension));
+				->where($db->quoteName('element') . ' = ' . $db->Quote($this->extension));
 		}
 
 		// Set the query and obtain an array of id's
@@ -163,7 +163,7 @@ class Mod_Social_SliderInstallerScript
 	 * @param   string   $type         The type of change to be made to the param (edit/remove)
 	 * @param   integer  $id           The id of the item in the relevant table
 	 *
-	 * @return  boolean  true on success, false on failure
+	 * @return  mixed  false on failure, void otherwise
 	 */
 	protected function setParams($param_array = null, $type = 'edit', $id = 0)
 	{
@@ -223,7 +223,7 @@ class Mod_Social_SliderInstallerScript
 	 * @param   string  $element     The element to get from the query
 	 * @param   string  $table       The table to search for the data in
 	 * @param   string  $column      The column of the database to search from
-	 * @param   string  $identifier  The property of the column to search for
+	 * @param   mixed   $identifier  The integer id or the already quoted string
 	 *
 	 * @return  array  associated array containing data from the cell
 	 *
@@ -238,7 +238,7 @@ class Mod_Social_SliderInstallerScript
 		// Build the query
 		$query->select($db->quoteName($element))
 			->from($db->quoteName($table))
-			->where($column . ' = ' . $db->Quote($identifier));
+			->where($db->quoteName($column) . ' = ' . $identifier);
 		$db->setQuery($query);
 
 		// Load the single cell and json_decode data
