@@ -46,7 +46,7 @@ class JFormFieldSorting extends JFormField
 					_super(item, container)
 				},
 				serialize: function (parent, children, isContainer) {
-					return isContainer ? children.join() : parent.text()
+					return isContainer ? children.join() : parent.attr("id")
 				},
 			})
 		});
