@@ -35,21 +35,21 @@ class JFormFieldSorting extends JFormField
 	protected function getInput()
 	{
 		$options = array(
-			1 => JText::_('COM_MODULES_FACEBOOK_FIELDSET_LABEL'),
-			2 => JText::_('COM_MODULES_TWITTER_FIELDSET_LABEL'),
-			3 => JText::_('COM_MODULES_GOOGLES_FIELDSET_LABEL'),
-			4 => JText::_('COM_MODULES_MYSPACE_FIELDSET_LABEL'),
-			5 => JText::_('COM_MODULES_YOUTUBE_FIELDSET_LABEL'),
-			6 => JText::_('COM_MODULES_LINKEDIN_FIELDSET_LABEL'),
-			7 => JText::_('COM_MODULES_STEAM_FIELDSET_LABEL'),
-			8 => JText::_('COM_MODULES_LASTFM_FIELDSET_LABEL'),
-			9 => JText::_('COM_MODULES_PINTEREST_FIELDSET_LABEL'),
-			10 => JText::_('COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL'),
-			11 => JText::_('COM_MODULES_TUMBLR_FIELDSET_LABEL'),
-			12 => JText::_('COM_MODULES_GITHUB_FIELDSET_LABEL'),
-			13 => JText::_('COM_MODULES_FLICKR_FIELDSET_LABEL'),
-			14 => JText::_('COM_MODULES_RSS_FIELDSET_LABEL'),
-			15 => JText::_('COM_MODULES_VIMEO_FIELDSET_LABEL'),
+			'sort_1' => JText::_('COM_MODULES_FACEBOOK_FIELDSET_LABEL'),
+			'sort_2' => JText::_('COM_MODULES_TWITTER_FIELDSET_LABEL'),
+			'sort_3' => JText::_('COM_MODULES_GOOGLES_FIELDSET_LABEL'),
+			'sort_4' => JText::_('COM_MODULES_MYSPACE_FIELDSET_LABEL'),
+			'sort_5' => JText::_('COM_MODULES_YOUTUBE_FIELDSET_LABEL'),
+			'sort_6' => JText::_('COM_MODULES_LINKEDIN_FIELDSET_LABEL'),
+			'sort_7' => JText::_('COM_MODULES_STEAM_FIELDSET_LABEL'),
+			'sort_8' => JText::_('COM_MODULES_LASTFM_FIELDSET_LABEL'),
+			'sort_9' => JText::_('COM_MODULES_PINTEREST_FIELDSET_LABEL'),
+			'sort_10' => JText::_('COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL'),
+			'sort_11' => JText::_('COM_MODULES_TUMBLR_FIELDSET_LABEL'),
+			'sort_12' => JText::_('COM_MODULES_GITHUB_FIELDSET_LABEL'),
+			'sort_13' => JText::_('COM_MODULES_FLICKR_FIELDSET_LABEL'),
+			'sort_14' => JText::_('COM_MODULES_RSS_FIELDSET_LABEL'),
+			'sort_15' => JText::_('COM_MODULES_VIMEO_FIELDSET_LABEL'),
 		);
 		$document = JFactory::getDocument();
 
@@ -166,7 +166,7 @@ class JFormFieldSorting extends JFormField
 		// If there is no value we'll set the default layout
 		if (!$this->value)
 		{
-			$this->value = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15';
+			$this->value = 'sort_1,sort_2,sort_3,sort_4,sort_5,sort_6,sort_7,sort_8,sort_9,sort_10,sort_11,sort_12,sort_13,sort_14,sort_15';
 		}
 
 		// Explode the options
@@ -176,7 +176,7 @@ class JFormFieldSorting extends JFormField
 
 		foreach ($items as $item)
 		{
-			echo '<li id="sort_' . $item . '"><span class="' . $item . '"></span>' . $options[$item] . '</li>';
+			echo '<li id="' . $item . '"><span class="' . $item . '"></span>' . $options[$item] . '</li>';
 		}
 
 		echo '</ul>
