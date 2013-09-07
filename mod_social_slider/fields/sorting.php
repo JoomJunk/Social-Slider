@@ -118,7 +118,7 @@ class JFormFieldSorting extends JFormField
 				cursor: move !important;
 				text-align: center;
 			}
-			ul #sortable .sort
+			ul #sortable .sort span
 			{
 				position: relative;
 				bottom: 2px;
@@ -162,7 +162,7 @@ class JFormFieldSorting extends JFormField
 
 		foreach ($items as $item)
 		{
-			echo '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
+			echo '<li class="sort" id="' . $item . '"><span class="' . $item . '"></span>' . $options[$item] . '</li>';
 		}
 
 		echo '</ul>
