@@ -162,7 +162,7 @@ class JFormFieldSorting extends JFormField
 
 		foreach ($items as $item)
 		{
-			echo '<li class="sort" id="' . $item . '"><span class="' . $item . '"></span>' . $options[$item] . '</li>';
+			echo '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
 		}
 
 		echo '</ul>
