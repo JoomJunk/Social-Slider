@@ -104,11 +104,22 @@ class JFormFieldSorting extends JFormField
 			}
 		');
 
+		// If there is no value we'll set the default layout
+		if (!$this->value)
+		{
+			$this->value = '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15';
+		}
+
+		// Explode the options
+		$items = explode(',', $this->value);
+
 		echo '<ul id="sortable">';
-		  foreach ($options as $key => $val)
-		  {
-			  echo '<li id="' . $key . '">' . $val . '</li>';
-		  }
+
+		foreach ($items as $item)
+		{
+			echo '<li id="' . $item . '">' . $options[$item] . '</li>';
+		}
+
 		echo '</ul>
 		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
 	}
