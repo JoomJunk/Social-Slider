@@ -82,7 +82,7 @@ class JFormFieldSorting extends JFormField
 		});
 		');
 
-		// Add in relevent styles
+		// Add in relevant styles
 		$icon = JUri::root() . 'modules/mod_social_slider/assets/icons/';
 		$document->addStyleDeclaration('
 			body.dragging, body.dragging * {
