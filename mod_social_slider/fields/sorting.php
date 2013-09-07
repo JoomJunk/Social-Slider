@@ -94,18 +94,11 @@ class JFormFieldSorting extends JFormField
 			  opacity: 0.5;
 			  z-index: 2000;
 			}
-
-			ol.example li.placeholder {
-			  position: relative;
-			}
-			ol.example li.placeholder:before {
-			  position: absolute;
-			}
 			
-			ul #sortable {
+			ul#sortable {
 				float: left;
 			}
-			ul #sortable li{
+			ul#sortable li {
 				background: #ECECEC;
 				border-color: #D8D8D8 #D8D8D8 #CCCCCC;
 				border-style: solid;
@@ -118,8 +111,7 @@ class JFormFieldSorting extends JFormField
 				cursor: move !important;
 				text-align: center;
 			}
-			ul #sortable .sort span
-			{
+			ul#sortable .sort span {
 				position: relative;
 				bottom: 2px;
 				height: 20px;
@@ -131,22 +123,21 @@ class JFormFieldSorting extends JFormField
 				padding-right: 25px;
 				margin: 1px 0px;
 			}
-			ul #sortable #sort_1 span{background: url(' . $icon . 'facebook-black.png);}
-			ul #sortable #sort_2 span{background: url(' . $icon . 'twitter-black.png);}
-			ul #sortable #sort_3 span{background: url(' . $icon . 'google-black.png);}
-			ul #sortable #sort_4 span{background: url(' . $icon . 'myspace-black.png);}
-			ul #sortable #sort_5 span{background: url(' . $icon . 'youtube-black.png);}
-			ul #sortable #sort_6 span{background: url(' . $icon . 'linkedin-black.png);}
-			ul #sortable #sort_7 span{background: url(' . $icon . 'steam-black.png); }
-			ul #sortable #sort_8 span{background: url(' . $icon . 'lastfm-black.png);}
-			ul #sortable #sort_9 span{background: url(' . $icon . 'pinterest-black.png);}
-			ul #sortable #sort_10 span{background: url(' . $icon . 'soundcloud-black.png);}
-			ul #sortable #sort_11 span{background: url(' . $icon . 'tumblr-black.png);}
-			ul #sortable #sort_12 span{background: url(' . $icon . 'github-black.png);}
-			ul #sortable #sort_13 span{background: url(' . $icon . 'flickr-black.png);}
-			ul #sortable #sort_14 span{background: url(' . $icon . 'rss-black.png);}
-			ul #sortable #sort_15 span{background: url(' . $icon . 'vimeo-black.png);}
-
+			ul#sortable #sort_1 span{background: url(' . $icon . 'facebook-black.png);}
+			ul#sortable #sort_2 span{background: url(' . $icon . 'twitter-black.png);}
+			ul#sortable #sort_3 span{background: url(' . $icon . 'google-black.png);}
+			ul#sortable #sort_4 span{background: url(' . $icon . 'myspace-black.png);}
+			ul#sortable #sort_5 span{background: url(' . $icon . 'youtube-black.png);}
+			ul#sortable #sort_6 span{background: url(' . $icon . 'linkedin-black.png);}
+			ul#sortable #sort_7 span{background: url(' . $icon . 'steam-black.png); }
+			ul#sortable #sort_8 span{background: url(' . $icon . 'lastfm-black.png);}
+			ul#sortable #sort_9 span{background: url(' . $icon . 'pinterest-black.png);}
+			ul#sortable #sort_10 span{background: url(' . $icon . 'soundcloud-black.png);}
+			ul#sortable #sort_11 span{background: url(' . $icon . 'tumblr-black.png);}
+			ul#sortable #sort_12 span{background: url(' . $icon . 'github-black.png);}
+			ul#sortable #sort_13 span{background: url(' . $icon . 'flickr-black.png);}
+			ul#sortable #sort_14 span{background: url(' . $icon . 'rss-black.png);}
+			ul#sortable #sort_15 span{background: url(' . $icon . 'vimeo-black.png);}
 		');
 
 		// If there is no value we'll set the default layout
