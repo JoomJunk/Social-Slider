@@ -83,6 +83,7 @@ class JFormFieldSorting extends JFormField
 		');
 
 		// Add in relevent styles
+		$icon = JUri::root() . 'modules/mod_social_slider/assets/icons/';
 		$document->addStyleDeclaration('
 			body.dragging, body.dragging * {
 			  cursor: move !important;
@@ -96,12 +97,70 @@ class JFormFieldSorting extends JFormField
 
 			ol.example li.placeholder {
 			  position: relative;
-			  /** More li styles **/
 			}
 			ol.example li.placeholder:before {
 			  position: absolute;
-			  /** Define arrowhead **/
 			}
+			
+			ul #sortable {
+				float: left;
+			}
+			ul #sortable li{
+				background: #ECECEC;
+				border-color: #D8D8D8 #D8D8D8 #CCCCCC;
+				border-style: solid;
+				border-width: 1px;
+				margin: 1px 0px;
+				box-shadow: 0 2px 2px rgba(0, 0, 0, 0.027), 0 1px 0 rgba(255, 255, 255, 0.69) inset, 0 -1px 0 rgba(0, 0, 0, 0.02) inset, 0 15px 14px rgba(255, 255, 255, 0.57) inset;
+				color: #666666;
+				padding: 6px 50px 7px 5px;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, 0.59);
+				cursor: move !important;
+				text-align: center;
+			}
+			ul #sortable #sort_1 span, 
+			ul #sortable #sort_2 span,
+			ul #sortable #sort_3 span,
+			ul #sortable #sort_4 span,
+			ul #sortable #sort_5 span,
+			ul #sortable #sort_6 span,
+			ul #sortable #sort_7 span,
+			ul #sortable #sort_8 span,
+			ul #sortable #sort_9 span,
+			ul #sortable #sort_10 span,
+			ul #sortable #sort_11 span,
+			ul #sortable #sort_12 span,
+			ul #sortable #sort_13 span,
+			ul #sortable #sort_14 span,
+			ul #sortable #sort_15 span
+			{
+				position: relative;
+				bottom: 2px;
+				height: 20px;
+				width: 20px;
+				display: block;
+				float: left;
+				background-repeat: no-repeat !important;
+				background-size: 20px 20px !important;
+				padding-right: 25px;
+				margin: 1px 0px;
+			}
+			ul #sortable #sort_1 span{background: url(' . $icon . 'facebook-black.png);}
+			ul #sortable #sort_2 span{background: url(' . $icon . 'twitter-black.png);}
+			ul #sortable #sort_3 span{background: url(' . $icon . 'google-black.png);}
+			ul #sortable #sort_4 span{background: url(' . $icon . 'myspace-black.png);}
+			ul #sortable #sort_5 span{background: url(' . $icon . 'youtube-black.png);}
+			ul #sortable #sort_6 span{background: url(' . $icon . 'linkedin-black.png);}
+			ul #sortable #sort_7 span{background: url(' . $icon . 'steam-black.png); }
+			ul #sortable #sort_8 span{background: url(' . $icon . 'lastfm-black.png);}
+			ul #sortable #sort_9 span{background: url(' . $icon . 'pinterest-black.png);}
+			ul #sortable #sort_10 span{background: url(' . $icon . 'soundcloud-black.png);}
+			ul #sortable #sort_11 span{background: url(' . $icon . 'tumblr-black.png);}
+			ul #sortable #sort_12 span{background: url(' . $icon . 'github-black.png);}
+			ul #sortable #sort_13 span{background: url(' . $icon . 'flickr-black.png);}
+			ul #sortable #sort_14 span{background: url(' . $icon . 'rss-black.png);}
+			ul #sortable #sort_15 span{background: url(' . $icon . 'vimeo-black.png);}
+
 		');
 
 		// If there is no value we'll set the default layout
@@ -117,7 +176,7 @@ class JFormFieldSorting extends JFormField
 
 		foreach ($items as $item)
 		{
-			echo '<li id="' . $item . '">' . $options[$item] . '</li>';
+			echo '<li id="sort_' . $item . '"><span class="' . $item . '"></span>' . $options[$item] . '</li>';
 		}
 
 		echo '</ul>
