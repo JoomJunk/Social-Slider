@@ -97,6 +97,7 @@ class JFormFieldSorting extends JFormField
 			
 			ul#sortable {
 				float: left;
+				list-style: none;
 			}
 			ul#sortable li {
 				background: #ECECEC;
