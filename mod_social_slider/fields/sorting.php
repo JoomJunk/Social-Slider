@@ -50,6 +50,11 @@ class JFormFieldSorting extends JFormField
 			'sort_13' => JText::_('COM_MODULES_FLICKR_FIELDSET_LABEL'),
 			'sort_14' => JText::_('COM_MODULES_RSS_FIELDSET_LABEL'),
 			'sort_15' => JText::_('COM_MODULES_VIMEO_FIELDSET_LABEL'),
+			'sort_16' => JText::_('COM_MODULES_CUSTOM1_FIELDSET_LABEL'),
+			'sort_17' => JText::_('COM_MODULES_CUSTOM2_FIELDSET_LABEL'),
+			'sort_18' => JText::_('COM_MODULES_CUSTOM3_FIELDSET_LABEL'),
+			'sort_19' => JText::_('COM_MODULES_CUSTOM4_FIELDSET_LABEL'),
+			'sort_20' => JText::_('COM_MODULES_CUSTOM5_FIELDSET_LABEL')
 		);
 		$document = JFactory::getDocument();
 
@@ -139,12 +144,13 @@ class JFormFieldSorting extends JFormField
 			ul#sortable #sort_13 span{background: url(' . $icon . 'flickr-black.png);}
 			ul#sortable #sort_14 span{background: url(' . $icon . 'rss-black.png);}
 			ul#sortable #sort_15 span{background: url(' . $icon . 'vimeo-black.png);}
+			ul#sortable #sort_16 span, ul#sortable #sort_17 span, ul#sortable #sort_18 span, ul#sortable #sort_19 span, ul#sortable #sort_20 span{background: url(' . $icon . 'custom-black.png);}
 		');
 
 		// If there is no value we'll set the default layout
 		if (!$this->value)
 		{
-			$this->value = 'sort_1,sort_2,sort_3,sort_4,sort_5,sort_6,sort_7,sort_8,sort_9,sort_10,sort_11,sort_12,sort_13,sort_14,sort_15';
+			$this->value = 'sort_1,sort_2,sort_3,sort_4,sort_5,sort_6,sort_7,sort_8,sort_9,sort_10,sort_11,sort_12,sort_13,sort_14,sort_15,sort_16,sort_17,sort_18,sort_19,sort_20';
 		}
 
 		// Explode the options

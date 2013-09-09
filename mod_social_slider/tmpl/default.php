@@ -37,6 +37,11 @@ $slides = array(
 	'sort_13' => 'flickr',
 	'sort_14' => 'rss',
 	'sort_15' => 'vimeo',
+	'sort_16' => 'custom1',
+	'sort_17' => 'custom2',
+	'sort_18' => 'custom3',
+	'sort_19' => 'custom4',
+	'sort_20' => 'custom5'
 );
 
 echo '<ul id="jj_sl_navigation">';
@@ -47,15 +52,18 @@ $order = explode(',', $sorting);
 foreach ($order as $item)
 {
 	$parts = explode('_', $item);
+	$key = $slides[$item];
+	$uppercase = strtoupper($key);
 
-	if ($parts[1] < 16)
+	if ($params->get($key) == 1)
 	{
-		$key = $slides[$item];
-		$uppercase = strtoupper($key);
-
-		if ($params->get($key) == 1)
+		if ($parts[1] < 16)
 		{
 			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '>' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . $uppercase . '') . '</a></li>';
+		}
+		else
+		{
+			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '>' . $params->get($key . '_text') . '</a></li>';
 		}
 	}
 }
