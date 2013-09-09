@@ -22,33 +22,42 @@ else
 }
 
 $slides = array(
-	'facebook' 	 => $params->get('facebook'), 
-	'twitter' 	 => $params->get('twitter'),
-	'google' 	 => $params->get('google'),
-	'myspace' 	 => $params->get('myspace'),
-	'youtube' 	 => $params->get('youtube'),
-	'linkedin' 	 => $params->get('linkedin'),
-	'steam' 	 => $params->get('steam'),
-	'lastfm' 	 => $params->get('lastfm'),
-	'pinterest'  => $params->get('pinterest'),
-	'soundcloud' => $params->get('soundcloud'),
-	'tumblr' 	 => $params->get('tumblr'),
-	'github' 	 => $params->get('github'),
-	'flickr' 	 => $params->get('flickr'),
-	'rss' 		 => $params->get('rss'),
-	'vimeo' 	 => $params->get('vimeo')
+	'sort_1' => 'facebook',
+	'sort_2' => 'twitter',
+	'sort_3' => 'google',
+	'sort_4' => 'myspace',
+	'sort_5' => 'youtube',
+	'sort_6' => 'linkedin',
+	'sort_7' => 'steam',
+	'sort_8' => 'lastfm',
+	'sort_9' => 'pinterest',
+	'sort_10' => 'soundcloud',
+	'sort_11' => 'tumblr',
+	'sort_12' => 'github',
+	'sort_13' => 'flickr',
+	'sort_14' => 'rss',
+	'sort_15' => 'vimeo',
 );
 
 echo '<ul id="jj_sl_navigation">';
 
-foreach ( $slides as $key => $val )
+$sorting = $params->get('sorting');
+$order = explode(',', $sorting);
+
+foreach ($order as $item)
 {
-	$uppercase = strtoupper($key);	
-	if ($val == 1)
+	$parts = explode('_', $item);
+
+	if ($parts[1] < 16)
 	{
-		echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '>' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . $uppercase . '') . '</a></li>';
+		$key = $slides[$item];
+		$uppercase = strtoupper($key);
+
+		if ($params->get($key) == 1)
+		{
+			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '>' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . $uppercase . '') . '</a></li>';
+		}
 	}
 }
 
 echo '</ul>';
-?>
