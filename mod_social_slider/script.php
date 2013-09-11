@@ -40,7 +40,7 @@ class Mod_Social_SliderInstallerScript
 	 *                                            , not uninstall)
 	 * @param   JInstallerAdapterModule  $parent  The class calling this method
 	 *
-	 * @return  mixed   void on success and false on failure
+	 * @return  void
 	 *
 	 * @since  1.3.3
 	 */
@@ -52,7 +52,7 @@ class Mod_Social_SliderInstallerScript
 		// Abort if the module being installed is not newer than the currently installed version
 		if ($type == 'Update')
 		{
-			$manifest = $this->getItemArray('manifest_cache', '#__extensions', 'element', $this->extension);
+			$manifest = $this->getItemArray('manifest_cache', '#__extensions', 'element', JFactory::getDbo()->quote($this->extension));
 			$oldRelease = $manifest['version'];
 
 			if (version_compare($oldRelease, $this->release, '<'))
@@ -98,14 +98,14 @@ class Mod_Social_SliderInstallerScript
 	 * Gets each instance of a module in the #__modules table
 	 * For all other extensions see alternate query
 	 *
-	 * @param   string  $extensionType  The type of extension (Component, Module or Plugin)
+	 * @param   boolean  $isModule  True if the extension is a module as this can have multiple instances
 	 *
 	 * @return  array  An array of ID's of the extension
 	 *
 	 * @since  1.3.3
 	 * @see getExtensionInstance
 	 */
-	protected function getInstances($extensionType)
+	protected function getInstances($isModule)
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
@@ -113,15 +113,15 @@ class Mod_Social_SliderInstallerScript
 		// Select the item(s) and retrieve the id
 		$query->select($db->quoteName('id'));
 
-		if ($extensionType == 'module')
+		if ($isModule)
 		{
 			$query->from($db->quoteName('#__modules'))
-				->where('module = ' . $db->Quote($this->extension));
+				->where($db->quoteName('module') . ' = ' . $db->Quote($this->extension));
 		}
 		else
 		{
 			$query->from($db->quoteName('#__extensions'))
-				->where('element = ' . $db->Quote($this->extension));
+				->where($db->quoteName('element') . ' = ' . $db->Quote($this->extension));
 		}
 
 		// Set the query and obtain an array of id's
@@ -212,6 +212,8 @@ class Mod_Social_SliderInstallerScript
 		{
 			$db->query();
 		}
+
+		return true;
 	}
 
 	/**
@@ -221,7 +223,7 @@ class Mod_Social_SliderInstallerScript
 	 * @param   string  $element     The element to get from the query
 	 * @param   string  $table       The table to search for the data in
 	 * @param   string  $column      The column of the database to search from
-	 * @param   string  $identifier  The property of the column to search for
+	 * @param   mixed   $identifier  The integer id or the already quoted string
 	 *
 	 * @return  array  associated array containing data from the cell
 	 *
@@ -236,7 +238,7 @@ class Mod_Social_SliderInstallerScript
 		// Build the query
 		$query->select($db->quoteName($element))
 			->from($db->quoteName($table))
-			->where($column . ' = ' . $db->Quote($identifier));
+			->where($db->quoteName($column) . ' = ' . $identifier);
 		$db->setQuery($query);
 
 		// Load the single cell and json_decode data
@@ -258,7 +260,7 @@ class Mod_Social_SliderInstallerScript
 		 * We have moved to use the colour form field so a hash must be applied
 		 * to the parameters for them to function as expected still.
 		 */
-		$modules = $this->getInstances('module');
+		$modules = $this->getInstances(true);
 
 		foreach ($modules as $module)
 		{
