@@ -65,11 +65,11 @@ class JFormFieldSorting extends JFormField
 		}
 		else
 		{
-			$document->addScript(JUri::root() . 'modules/mod_social_slider/assets/jquery.js');
+			$document->addScript(JUri::root() . 'media/mod_social_slider/js/jquery.js');
 		}
 
 		// Next insert the jQuery plugin
-		$document->addScript(JUri::root() . 'modules/mod_social_slider/assets/jquery-sortable-min.js');
+		$document->addScript(JUri::root() . 'media/mod_social_slider/js/jquery-sortable-min.js');
 
 		// Now initialize the plugin
 		$document->addScriptDeclaration('
@@ -88,7 +88,7 @@ class JFormFieldSorting extends JFormField
 		');
 
 		// Add in relevant styles
-		$icon = JUri::root() . 'modules/mod_social_slider/assets/icons/';
+		$icon = JUri::root() . 'media/mod_social_slider/icons/';
 		$document->addStyleDeclaration('
 			body.dragging, body.dragging * {
 			  cursor: move !important;
