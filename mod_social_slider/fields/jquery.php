@@ -8,6 +8,8 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+JFormHelper::loadFieldClass('list');
+
 /**
  * Form Field class for JoomJunk.
  * Provides radio button inputs for the jQuery insertation in Joomla 2.5 only
@@ -15,7 +17,7 @@ defined('_JEXEC') or die('Restricted access');
  * @package     JJ_Social_Slider
  * @since       1.3.0
  */
-class JFormFieldjQuery extends JFormField
+class JFormFieldjQuery extends JFormFieldList
 {
 	/**
 	 * The form field type.
@@ -40,41 +42,7 @@ class JFormFieldjQuery extends JFormField
 		}
 		else
 		{
-			$html = array();
-			$attr = '';
-
-			// Initialize some field attributes.
-			$attr .= $this->element['class'] ? ' class="' . (string) $this->element['class'] . '"' : '';
-
-			// To avoid user's confusion, readonly="true" should imply disabled="true".
-			if ((string) $this->element['readonly'] == 'true' || (string) $this->element['disabled'] == 'true')
-			{
-				$attr .= ' disabled="disabled"';
-			}
-
-			$attr .= $this->element['size'] ? ' size="' . (int) $this->element['size'] . '"' : '';
-			$attr .= $this->multiple ? ' multiple="multiple"' : '';
-			$attr .= $this->required ? ' required="required" aria-required="true"' : '';
-
-			// Initialize JavaScript field attributes.
-			$attr .= $this->element['onchange'] ? ' onchange="' . (string) $this->element['onchange'] . '"' : '';
-
-			// Get the field options.
-			$options = (array) $this->getOptions();
-
-			// Create a read-only list (no name) with a hidden input to store the value.
-			if ((string) $this->element['readonly'] == 'true')
-			{
-				$html[] = JHtml::_('select.genericlist', $options, '', trim($attr), 'value', 'text', $this->value, $this->id);
-				$html[] = '<input type="hidden" name="' . $this->name . '" value="' . $this->value . '"/>';
-			}
-			// Create a regular list.
-			else
-			{
-				$html[] = JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
-			}
-
-			return implode($html);
+			return parent::getInput();
 		}
 	}
 
