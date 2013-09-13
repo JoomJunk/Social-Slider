@@ -38,7 +38,7 @@ class JFormFieldjQuery extends JFormFieldList
 	{
 		if (version_compare(JVERSION,'3.0.0','ge'))
 		{
-			return '<p style="float:left;margin:0;">' . JText::_('JJ_SOCIAL_SLIDER_NOJQUERY_30') . '</p>';
+			return '<span class="readonly">' . JText::_('JJ_SOCIAL_SLIDER_NOJQUERY_30') . '</span>';
 		}
 		else
 		{
