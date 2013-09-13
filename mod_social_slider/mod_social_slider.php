@@ -50,7 +50,7 @@ if ($params->get('jquery_css') == 0)
 			if (!JFactory::getApplication()->get('jquery'))
 			{
 				JFactory::getApplication()->set('jquery', true);
-				$document->addScript(JUri::root() . "media/mod_social_slider/js/jquery.js");
+				JHtml::_('script', JUri::root() . 'media/mod_social_slider/js/jquery.js');
 			}
 		}
 	}
