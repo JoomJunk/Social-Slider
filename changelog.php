@@ -16,6 +16,10 @@ $ -> Language fix or change
 ! -> Note
 
 Version 1.3.3
++ Ability to order the position of the slides
+^ Majorly improved coding
+
+Version 1.3.3
 ^ Slide colour now a colour form field
 # Undefined variable when module on right hand side of screen and jQuery enabled
 $ Language string changes RTL settings
