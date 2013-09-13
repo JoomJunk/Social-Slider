@@ -46,7 +46,7 @@ $slides = array(
 
 echo '<ul id="jj_sl_navigation">';
 
-$sorting = $params->get('sorting');
+$sorting = $params->get('sorting', 'sort_1,sort_2,sort_3,sort_4,sort_5,sort_6,sort_7,sort_8,sort_9,sort_10,sort_11,sort_12,sort_13,sort_14,sort_15,sort_16,sort_17,sort_18,sort_19,sort_20');
 $order = explode(',', $sorting);
 
 foreach ($order as $item)
