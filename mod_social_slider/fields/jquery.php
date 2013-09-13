@@ -36,7 +36,7 @@ class JFormFieldjQuery extends JFormField
 	{
 		if (version_compare(JVERSION,'3.0.0','ge'))
 		{
-			return '<p style="float:left">' . JText::_('JJ_SOCIAL_SLIDER_NOJQUERY_30') . '</p>';
+			return '<p style="float:left;margin:0;">' . JText::_('JJ_SOCIAL_SLIDER_NOJQUERY_30') . '</p>';
 		}
 		else
 		{
