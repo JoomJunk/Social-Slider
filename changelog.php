@@ -15,9 +15,11 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
-Version 1.3.3
+Version 1.4.0
 + Ability to order the position of the slides
-^ Majorly improved coding
+^ Improved code optimization of default.php file
+^ Moved assets folder into media folder
+^ Code optimization of jQuery form field
 
 Version 1.3.3
 ^ Slide colour now a colour form field
