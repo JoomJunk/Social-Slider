@@ -34,9 +34,12 @@ class JFormFieldjQuery extends JFormField
 	 */
 	protected function getInput()
 	{
-		if(version_compare(JVERSION,'3.0.0','ge')) {
+		if (version_compare(JVERSION,'3.0.0','ge'))
+		{
 			return '<p>'.JText::_('JJ_SOCIAL_SLIDER_NOJQUERY_30').'</p>';
-		} else {
+		}
+		else
+		{
 			$html = array();
 			$attr = '';
 
@@ -52,6 +55,7 @@ class JFormFieldjQuery extends JFormField
 			$attr .= $this->element['size'] ? ' size="' . (int) $this->element['size'] . '"' : '';
 			$attr .= $this->multiple ? ' multiple="multiple"' : '';
 			$attr .= $this->required ? ' required="required" aria-required="true"' : '';
+			$attr .= ' style="float:left"';
 
 			// Initialize JavaScript field attributes.
 			$attr .= $this->element['onchange'] ? ' onchange="' . (string) $this->element['onchange'] . '"' : '';
