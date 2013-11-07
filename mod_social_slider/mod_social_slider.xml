@@ -8,6 +8,7 @@
 	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
 	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
 	<version>1.4.1</version>
+	<description>JJ_SOCIAL_SLIDER_DESC</description>
 	
 	<files>
 		<filename module="mod_social_slider">mod_social_slider.php</filename>

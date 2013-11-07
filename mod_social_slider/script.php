@@ -81,34 +81,6 @@ class Mod_Social_SliderInstallerScript
 	}
 
 	/**
-	 * Function called on install of module
-	 *
-	 * @param   JInstallerAdapterModule  $parent  The class calling this method
-	 *
-	 * @return  void
-	 *
-	 * @since  1.3.3
-	 */
-	public function install($parent)
-	{
-		echo '<p>' . JText::_('JJ_SOCIAL_SLIDER_DESC') . '</p>';
-	}
-
-	/**
-	 * Function called on update of module
-	 *
-	 * @param   JInstallerAdapterModule  $parent  The class calling this method
-	 *
-	 * @return  void
-	 *
-	 * @since 1.3.3
-	 */
-	public function update($parent)
-	{
-		echo '<p>' . JText::_('JJ_SOCIAL_SLIDER_DESC') . '</p>';
-	}
-
-	/**
 	 * Gets each instance of a module in the #__modules table
 	 * For all other extensions see alternate query
 	 *
