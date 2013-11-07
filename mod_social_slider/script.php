@@ -46,6 +46,14 @@ class Mod_Social_SliderInstallerScript
 	 */
 	public function preflight($type, $parent)
 	{
+		$version = new JVersion;
+		if(!$version->isCompatible('3.2.0'))
+		{
+			JFactory::getApplication()->enqueueMessage('JJ_SOCIAL_SLIDER_JOOMLA_VERSION_OUTDATED');
+			
+			return false;
+		}
+
 		// Module manifest file version
 		$this->release = $parent->get("manifest")->version;
 
