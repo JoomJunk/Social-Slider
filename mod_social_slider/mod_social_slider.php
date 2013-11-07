@@ -31,29 +31,7 @@ $document = JFactory::getDocument();
 
 if ($params->get('jquery_css') == 0)
 {
-	if (version_compare(JVERSION, '3.0.0', 'ge'))
-	{
-		JHtml::_('jquery.framework');
-	}
-	else
-	{
-		if ($params->get('jquery') == 0)
-		{
-			if (!JFactory::getApplication()->get('jquery'))
-			{
-				JFactory::getApplication()->set('jquery', true);
-				$document->addScript("http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js");
-			}
-		}
-		elseif ($params->get('jquery') == 1)
-		{
-			if (!JFactory::getApplication()->get('jquery'))
-			{
-				JFactory::getApplication()->set('jquery', true);
-				JHtml::_('script', JUri::root() . 'media/mod_social_slider/js/jquery.js');
-			}
-		}
-	}
+	JHtml::_('jquery.framework');
 }
 
 $style1 = 'ul#jj_sl_navigation li a {'

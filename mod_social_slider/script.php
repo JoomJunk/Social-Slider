@@ -209,15 +209,7 @@ class Mod_Social_SliderInstallerScript
 
 		// Update table
 		$db->setQuery($query);
-
-		if (version_compare(JVERSION, '3.0.0', 'ge'))
-		{
-			$db->execute();
-		}
-		else
-		{
-			$db->query();
-		}
+		$db->execute();
 
 		return true;
 	}
