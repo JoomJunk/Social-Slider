@@ -49,7 +49,7 @@ class Mod_Social_SliderInstallerScript
 		$version = new JVersion;
 		if(!$version->isCompatible('3.2.0'))
 		{
-			JFactory::getApplication()->enqueueMessage('JJ_SOCIAL_SLIDER_JOOMLA_VERSION_OUTDATED');
+			JFactory::getApplication()->enqueueMessage(JText::_('JJ_SOCIAL_SLIDER_JOOMLA_VERSION_OUTDATED'));
 			
 			return false;
 		}
