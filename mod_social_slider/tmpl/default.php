@@ -14,7 +14,7 @@ $document->addStyleSheet(JURI::root() . "media/mod_social_slider/css/style.css")
 
 if ($params->get('tab', 0) == 0)
 {
-	$target = 'target="_blank"';
+	$target = ' target="_blank"';
 }
 else
 {
