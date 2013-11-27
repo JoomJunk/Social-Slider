@@ -7,12 +7,11 @@
 	<license>http://www.gnu.org/licenses/gpl-3.0.html</license> 
 	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
 	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
-	<version>1.3.3</version>
+	<version>1.4.1</version>
 	
 	<files>
 		<filename module="mod_social_slider">mod_social_slider.php</filename>
 		<filename>index.html</filename>
-		<folder>assets</folder>
 		<folder>fields</folder>
 		<folder>tmpl</folder>
 	</files>
@@ -23,10 +22,17 @@
 
 	<scriptfile>script.php</scriptfile>
 
-    <languages folder="language">
-        <language tag="en-GB">en-GB/en-GB.mod_social_slider.ini</language>
+	<media folder="media" destination="mod_social_slider">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>icons</folder>
+		<folder>js</folder>
+	</media>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_social_slider.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_social_slider.sys.ini</language>
-    </languages>
+	</languages>
 
 	<config>
 		<fields name="params">
@@ -237,6 +243,7 @@
 					<option value="0">JJ_SOCIAL_SLIDER_TAB_NEW</option>
 					<option value="1">JJ_SOCIAL_SLIDER_TAB_SAME</option>
 				</field>
+                <field name="sorting" type="Sorting" label="JJ_SOCIAL_SLIDER_SORTING" description="JJ_SOCIAL_SLIDER_SORTING_DESC" id="order" />
 			</fieldset>
 		</fields>
 	</config>

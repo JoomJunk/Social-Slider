@@ -62,6 +62,12 @@ class Mod_Social_SliderInstallerScript
 				{
 					$this->update132();
 				}
+
+				// Update to reflect move from assets subfolder to media folder
+				if (version_compare($oldRelease, '1.4.0', '<='))
+				{
+					$this->update140();
+				}
 			}
 		}
 	}
@@ -248,7 +254,7 @@ class Mod_Social_SliderInstallerScript
 	}
 
 	/**
-	 * Function to update the file structure and params for the Social Slider Version 1.3.2 updates
+	 * Function to update the params for the Social Slider Version 1.3.2 updates
 	 *
 	 * @return  void
 	 *
@@ -276,6 +282,36 @@ class Mod_Social_SliderInstallerScript
 
 			// Unset the array for the next loop
 			unset($colours);
+		}
+	}
+
+
+	/**
+	 * Function to update the file structure for the Social Slider Version 1.4.0 updates
+	 *
+	 * @return  void
+	 *
+	 * @since  1.4.0
+	 */
+	protected function update140()
+	{
+		// Import dependencies
+		jimport('joomla.filesystem.folder');
+		jimport('joomla.filesystem.file');
+
+		// Move the assets and add index.html files to new directory
+		if (JFolder::create('media/' . $this->extension)
+			&& JFolder::move(JUri::root() . 'modules/'. $this->extension . '/assets/icons', JUri::root() . 'media/'. $this->extension)
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/index.html', JUri::root() . 'media/'. $this->extension . '/index.html')
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/jquery-sortable-min.js', JUri::root() . 'media/'. $this->extension . '/js/jquery-sortable-min.js')
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/jquery-sortable.js', JUri::root() . 'media/'. $this->extension . '/js/jquery-sortable.js')
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/jquery.js', JUri::root() . 'media/'. $this->extension . '/js/jquery.js')
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/style.css', JUri::root() . 'media/'. $this->extension . '/css/style.css')
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/index.html', JUri::root() . 'media/'. $this->extension . '/js/index.html')
+			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/index.html', JUri::root() . 'media/'. $this->extension . '/css/index.html'))
+		{
+			// We can now delete the folder
+			JFolder::delete(JPATH_ROOT . '/modules/'. $this->extension . '/assets');
 		}
 	}
 }
