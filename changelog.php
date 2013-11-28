@@ -15,6 +15,10 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+
+Version 1.4.2
+# Fix for minor HTML markup validation error
+
 Version 1.4.1
 ^ Code optimization of jQuery form field in Joomla 2.5 and lower
 # jQuery form field displayed badly in Hathor
