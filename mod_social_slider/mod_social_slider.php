@@ -34,6 +34,29 @@ if ($params->get('jquery_css') == 0)
 	JHtml::_('jquery.framework');
 }
 
+$slides = array(
+	'sort_1' => 'facebook',
+	'sort_2' => 'twitter',
+	'sort_3' => 'google',
+	'sort_4' => 'myspace',
+	'sort_5' => 'youtube',
+	'sort_6' => 'linkedin',
+	'sort_7' => 'steam',
+	'sort_8' => 'lastfm',
+	'sort_9' => 'pinterest',
+	'sort_10' => 'soundcloud',
+	'sort_11' => 'tumblr',
+	'sort_12' => 'github',
+	'sort_13' => 'flickr',
+	'sort_14' => 'rss',
+	'sort_15' => 'vimeo',
+	'sort_16' => 'custom1',
+	'sort_17' => 'custom2',
+	'sort_18' => 'custom3',
+	'sort_19' => 'custom4',
+	'sort_20' => 'custom5'
+);
+
 $style1 = 'ul#jj_sl_navigation li a {'
 		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
