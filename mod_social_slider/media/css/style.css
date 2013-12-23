@@ -29,6 +29,10 @@ ul#jj_sl_navigation li a {
 	font-weight: bold;
 	
 }
+ul#jj_sl_navigation li a .jj_social_text {
+    display: inline-block;
+	width: 100px;	
+}
 ul#jj_sl_navigation .facebook a:hover{
     background-color: #3B5998;
 }
