@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.4.3
+# Fixed overlapping text for long translated strings
+^ Optimized code
 
 Version 1.4.2
 # Fix for minor HTML markup validation error
