@@ -17,6 +17,7 @@ ul#jj_sl_navigation li {
 	padding: 1px 0px 1px 0px;
     overflow:hidden;
 	direction: ltr;
+	border: 0;
 }
 
 ul#jj_sl_navigation li a {
@@ -28,6 +29,10 @@ ul#jj_sl_navigation li a {
 	color: #FFFFFF;
 	font-weight: bold;
 	
+}
+ul#jj_sl_navigation li a .jj_social_text {
+	display: inline-block;
+	width: 125px;        
 }
 ul#jj_sl_navigation .facebook a:hover{
     background-color: #3B5998;
