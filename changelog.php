@@ -15,6 +15,12 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.4.4 (IMPORTANT)
+# Fixed missing closing bracket, breaking the site 
+
+Version 1.4.3
+# Fixed overlapping text for long translated strings
+^ Major code optimization
 
 Version 1.4.2
 # Fix for minor HTML markup validation error
