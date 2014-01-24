@@ -56,6 +56,28 @@ if ($params->get('jquery_css') == 0)
 	}
 }
 
+$slides = array(
+	'sort_1' => 'facebook',
+	'sort_2' => 'twitter',
+	'sort_3' => 'google',
+	'sort_4' => 'myspace',
+	'sort_5' => 'youtube',
+	'sort_6' => 'linkedin',
+	'sort_7' => 'steam',
+	'sort_8' => 'lastfm',
+	'sort_9' => 'pinterest',
+	'sort_10' => 'soundcloud',
+	'sort_11' => 'tumblr',
+	'sort_12' => 'github',
+	'sort_13' => 'flickr',
+	'sort_14' => 'rss',
+	'sort_15' => 'vimeo',
+	'sort_16' => 'custom1',
+	'sort_17' => 'custom2',
+	'sort_18' => 'custom3',
+	'sort_19' => 'custom4',
+	'sort_20' => 'custom5'
+);
 $style1 = 'ul#jj_sl_navigation li a {'
 		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
@@ -101,7 +123,7 @@ if ($position == "left")
 		$document->addScriptDeclaration($js_left);
 	}
 
-	if ($params->get('jquery_css') == 1)
+	else
 	{
 		$css = 'ul#jj_sl_navigation li { '
 			. 'margin-left: -140px;'
@@ -112,98 +134,34 @@ if ($position == "left")
 			. 'transition: margin-left 0.3s;'
 			. '}';
 	}
-
-	$style = 'ul#jj_sl_navigation { '
-		. $position . ':0px;'
-		. 'top:' . $params->get('top') . 'px;'
-		. '}'
-		. 'ul#jj_sl_navigation li:hover { '
-		. 'margin-left: 0px;'
-		. '}'
-		. 'ul#jj_sl_navigation li a { '
-		. 'padding: 11px 0px 11px 10px;'
-		. 'margin-left: -2px;'
-		. '}'
-		. 'ul#jj_sl_navigation .facebook a {'
-		. 'background-position: 144px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/facebook-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .twitter a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/twitter-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .google a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/google-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .myspace a {'
-		. 'background-position: 144px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/myspace-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .youtube a {'
-		. 'background-position: 144px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/youtube-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .linkedin a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/linkedin-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .steam a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/steam-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .lastfm a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/lastfm-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .pinterest a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/pinterest-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .soundcloud a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/soundcloud-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .tumblr a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/tumblr-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .github a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/github-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .flickr a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/flickr-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .rss a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/rss-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .vimeo a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/vimeo-' . $params->get('icon_colour') . '.png);'
-		. '}'
-		. 'ul#jj_sl_navigation .custom1 a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom1_image') . ');'
-		. '}'
-		. 'ul#jj_sl_navigation .custom2 a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom2_image') . ');'
-		. '}'
-		. 'ul#jj_sl_navigation .custom3 a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom3_image') . ');'
-		. '}'
-		. 'ul#jj_sl_navigation .custom4 a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom4_image') . ');'
-		. '}'
-		. 'ul#jj_sl_navigation .custom5 a {'
-		. 'background-position: 145px 50%;'
-		. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom5_image') . ');'
-		. '}';
+	$style = "";        
+        $style .= 'ul#jj_sl_navigation { '
+        . $position . ':0px;'
+        . 'top:' . $params->get('top') . 'px;'
+        . '}'
+        . 'ul#jj_sl_navigation li:hover { '
+        . 'margin-left: 0px;'
+        . '}'
+        . 'ul#jj_sl_navigation li a { '
+        . 'padding: 11px 0px 11px 10px;'
+        . 'margin-left: -2px;'
+        . '}';
+        foreach ($slides as $slide => $social){
+                if (strpos($social, "custom") === false)
+                {
+                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                                background-position: 144px 50%;
+                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
+                         }';
+                }
+                else
+                {
+                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                                background-position: 144px 50%;
+                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
+                         }';
+                }
+        }
 }
 elseif ($position == "right")
 {
@@ -228,7 +186,7 @@ elseif ($position == "right")
 		$document->addScriptDeclaration($js_right);
 	}
 
-	if ($params->get('jquery_css') == 1)
+	else
 	{
 		$css = 'ul#jj_sl_navigation li { '
 			. 'right: -138px;'
@@ -240,97 +198,34 @@ elseif ($position == "right")
 			. 'transition: right 0.3s;'
 			. '}';
 	}
-
-$style = 'ul#jj_sl_navigation { '
-			. $position . ':0px;'
-			. 'top:' . $params->get('top') . 'px;'
-			. '}'
-			. 'ul#jj_sl_navigation li:hover { '
-			. 'right: 0px;'
-			. '}'
-			. 'ul#jj_sl_navigation li a { '
-			. 'padding: 11px 10px 11px 0px;'
-			. '}'
-			. 'ul#jj_sl_navigation .facebook a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/facebook-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .twitter a {'
-			. 'background-position: 5px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/twitter-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .google a {'
-			. 'background-position: 5px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/google-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .myspace a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/myspace-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .youtube a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/youtube-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .linkedin a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/linkedin-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .steam a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/steam-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .lastfm a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/lastfm-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .pinterest a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/pinterest-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .soundcloud a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/soundcloud-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .tumblr a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/tumblr-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .github a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/github-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .flickr a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/flickr-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .rss a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/rss-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .vimeo a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/vimeo-' . $params->get('icon_colour') . '.png);'
-			. '}'
-			. 'ul#jj_sl_navigation .custom1 a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom1_image') . ');'
-			. '}'
-			. 'ul#jj_sl_navigation .custom2 a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom2_image') . ');'
-			. '}'
-			. 'ul#jj_sl_navigation .custom3 a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom3_image') . ');'
-			. '}'
-			. 'ul#jj_sl_navigation .custom4 a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom4_image') . ');'
-			. '}'
-			. 'ul#jj_sl_navigation .custom5 a {'
-			. 'background-position: 4px 50%;'
-			. 'background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get('custom5_image') . ');'
-			. '}';
+	
+	$style = "";
+        $style .= 'ul#jj_sl_navigation { '
+                . $position . ':0px;'
+                . 'top:' . $params->get('top') . 'px;'
+                . '}'
+                . 'ul#jj_sl_navigation li:hover { '
+                . 'right: 0px;'
+                . '}'
+                . 'ul#jj_sl_navigation li a { '
+                . 'padding: 11px 10px 11px 0px;'
+                . '}';
+        foreach ($slides as $slide => $social){
+                if (strpos($social, "custom") === false)
+                {
+                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                                background-position: 4px 50%;
+                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
+                         }';
+                }
+                else
+                {
+                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                                background-position: 4px 50%;
+                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
+                         }';
+                }
+        }
 }
 
 $custom_css = 'ul#jj_sl_navigation .custom1 a:hover{

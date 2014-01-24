@@ -21,29 +21,6 @@ else
 	$target = "";
 }
 
-$slides = array(
-	'sort_1' => 'facebook',
-	'sort_2' => 'twitter',
-	'sort_3' => 'google',
-	'sort_4' => 'myspace',
-	'sort_5' => 'youtube',
-	'sort_6' => 'linkedin',
-	'sort_7' => 'steam',
-	'sort_8' => 'lastfm',
-	'sort_9' => 'pinterest',
-	'sort_10' => 'soundcloud',
-	'sort_11' => 'tumblr',
-	'sort_12' => 'github',
-	'sort_13' => 'flickr',
-	'sort_14' => 'rss',
-	'sort_15' => 'vimeo',
-	'sort_16' => 'custom1',
-	'sort_17' => 'custom2',
-	'sort_18' => 'custom3',
-	'sort_19' => 'custom4',
-	'sort_20' => 'custom5'
-);
-
 echo '<ul id="jj_sl_navigation">';
 
 $sorting = $params->get('sorting', 'sort_1,sort_2,sort_3,sort_4,sort_5,sort_6,sort_7,sort_8,sort_9,sort_10,sort_11,sort_12,sort_13,sort_14,sort_15,sort_16,sort_17,sort_18,sort_19,sort_20');
