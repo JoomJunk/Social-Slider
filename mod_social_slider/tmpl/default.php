@@ -10,7 +10,7 @@
 defined('_JEXEC')  or die('Restricted access');
 
 $document = JFactory::getDocument();
-$document->addStyleSheet(JURI::root() . "media/mod_social_slider/css/style.css");
+JHtml::_('stylesheet', JUri::root() . 'media/mod_social_slider/css/style.css'); 
 
 if ($params->get('tab', 0) == 0)
 {
