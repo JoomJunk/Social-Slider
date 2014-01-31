@@ -168,7 +168,15 @@ class Mod_Social_SliderInstallerScript
 				if ($type == 'edit')
 				{
 					// Add or edit the new variable(s) to the existing params
-					$params[(string) $name] = (string) $value;
+					if (is_array($value))
+					{
+						// Convert an array into a json encoded string
+						$params[(string) $name] = array_values($value);
+					}
+					else
+					{
+						$params[(string) $name] = (string) $value;
+					}
 				}
 				elseif ($type == 'remove')
 				{
