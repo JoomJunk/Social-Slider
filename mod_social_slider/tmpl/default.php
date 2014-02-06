@@ -9,8 +9,7 @@
 // No direct access
 defined('_JEXEC')  or die('Restricted access');
 
-$document = JFactory::getDocument();
-$document->addStyleSheet(JURI::root() . "media/mod_social_slider/css/style.css");
+JHtml::_('stylesheet', 'mod_social_slider/css/style.css', array(), true); 
 
 if ($params->get('tab', 0) == 0)
 {
