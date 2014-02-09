@@ -59,17 +59,10 @@ class JFormFieldSorting extends JFormField
 		$document = JFactory::getDocument();
 
 		// Inject jQuery onto the page
-		if (version_compare(JVERSION, '3.0.0', 'ge'))
+		if (!JFactory::getApplication()->get('jquery'))
 		{
-			JHtml::_('jquery.framework');
-		}
-		else
-		{
-			if (!JFactory::getApplication()->get('jquery'))
-			{
-				JFactory::getApplication()->set('jquery', true);
-				JHtml::_('script', 'mod_social_slider/jquery.js', false, true);
-			}
+			JFactory::getApplication()->set('jquery', true);
+			JHtml::_('script', 'mod_social_slider/jquery.js', false, true);
 		}
 
 		// Next insert the jQuery plugin
@@ -160,14 +153,15 @@ class JFormFieldSorting extends JFormField
 		// Explode the options
 		$items = explode(',', $this->value);
 
-		echo '<ul id="sortable">';
+		$input = '<ul id="sortable">';
 
 		foreach ($items as $item)
 		{
-			echo '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
+			$input .= '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
 		}
 
-		echo '</ul>
+		$input .= '</ul>
 		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
+		return $input;
 	}
 }
