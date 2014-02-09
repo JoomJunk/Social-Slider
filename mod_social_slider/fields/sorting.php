@@ -149,14 +149,15 @@ class JFormFieldSorting extends JFormField
 		// Explode the options
 		$items = explode(',', $this->value);
 
-		echo '<ul id="sortable">';
+		$input = '<ul id="sortable">';
 
 		foreach ($items as $item)
 		{
-			echo '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
+			$input .= '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
 		}
 
-		echo '</ul>
+		$input .= '</ul>
 		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
+		return $input;
 	}
 }
