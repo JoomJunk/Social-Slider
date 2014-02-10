@@ -226,6 +226,10 @@
 					<option value="right">JJ_SOCIAL_SLIDER_RIGHT</option>
 					<option value="rtl">JJ_SOCIAL_SLIDER_LANGUAGE_DEFINED</option>
 				</field>
+				<field name="top_bottom" type="list" default="top" label="JJ_SOCIAL_SLIDER_TOP_BOTTOM" description="JJ_SOCIAL_SLIDER_TOP_BOTTOM_DESC">
+					<option value="top">JJ_SOCIAL_SLIDER_TOP</option>
+					<option value="bottom">JJ_SOCIAL_SLIDER_BOTTOM</option>
+				</field>
 				<field name="top" type="text" default="10" label="JJ_SOCIAL_SLIDER_TOP" description="JJ_SOCIAL_SLIDER_TOP_DESC" />		
 				<field name="disable" type="list" default="0" label="JJ_SOCIAL_SLIDER_DISABLE" description="JJ_SOCIAL_SLIDER_DISABLE_DESC">
 					<option value="0">JJ_SOCIAL_SLIDER_NO_DISABLE</option>
