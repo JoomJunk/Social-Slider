@@ -220,6 +220,7 @@
 			<fieldset name="Other" addfieldpath="/modules/mod_social_slider/fields">	
 				<field name="sorting" type="Sorting" label="JJ_SOCIAL_SLIDER_SORTING" description="JJ_SOCIAL_SLIDER_SORTING_DESC" id="order" />
 				<field name="slide_colour" type="color" default="#33353B" label="JJ_SOCIAL_SLIDER_SLIDE_COLOUR" description="JJ_SOCIAL_SLIDER_SLIDE_COLOUR_DESC" />
+				<field name="text_colour" type="color" default="#FFFFFF" label="JJ_SOCIAL_SLIDER_TEXT_COLOUR" description="JJ_SOCIAL_SLIDER_TEXT_COLOUR_DESC" />
 				<field name="position" type="list" default="left" label="JJ_SOCIAL_SLIDER_POSITION" description="JJ_SOCIAL_SLIDER_POSITION_DESC">
 					<option value="left">JJ_SOCIAL_SLIDER_LEFT</option>
 					<option value="right">JJ_SOCIAL_SLIDER_RIGHT</option>
