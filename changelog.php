@@ -20,6 +20,7 @@ Version 1.5.0
 ^ Allow specification of the module from the bottom or the top of the page
 ^ Script updates
 + Add text colour parameter
+# Fix bug in the sorting form field in J3.2
 
 Version 1.4.4 (IMPORTANT)
 # Fixed missing closing bracket, breaking the site 
