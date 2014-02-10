@@ -138,7 +138,7 @@ if ($position == "left")
 	$style = "";        
         $style .= 'ul#jj_sl_navigation { '
         . $position . ':0px;'
-        . 'top:' . $params->get('top') . 'px;'
+        . $params->get('top_bottom') . ':' . $params->get('top') . 'px;'
         . '}'
         . 'ul#jj_sl_navigation li:hover { '
         . 'margin-left: 0px;'
@@ -203,7 +203,7 @@ elseif ($position == "right")
 	$style = "";
         $style .= 'ul#jj_sl_navigation { '
                 . $position . ':0px;'
-                . 'top:' . $params->get('top') . 'px;'
+                . $params->get('top_bottom') . ':' . $params->get('top') . 'px;'
                 . '}'
                 . 'ul#jj_sl_navigation li:hover { '
                 . 'right: 0px;'
