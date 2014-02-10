@@ -81,6 +81,7 @@ $slides = array(
 $style1 = 'ul#jj_sl_navigation li a {'
 		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
+		. 'color:' . $params->get('text_colour') . ' !important;'
 		. '}';
 $document->addStyleDeclaration($style1);
 
