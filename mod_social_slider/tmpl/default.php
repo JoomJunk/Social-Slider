@@ -9,7 +9,7 @@
 // No direct access
 defined('_JEXEC')  or die('Restricted access');
 
-JHtml::_('stylesheet', 'mod_social_slider/css/style.css', array(), true); 
+JHtml::_('stylesheet', JUri::root() . 'media/mod_social_slider/css/style.css'); 
 
 if ($params->get('tab', 0) == 0)
 {
