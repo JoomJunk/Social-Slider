@@ -162,6 +162,7 @@ class JFormFieldSorting extends JFormField
 
 		$input .= '</ul>
 		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
+
 		return $input;
 	}
 }
