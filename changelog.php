@@ -15,6 +15,11 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+
+Version 1.5.1 (IMPORTANT BUG FIX FOR JOOMLA 3.1 USERS)
++ Added background colour transition
+# Fixed Joomla 3.1 module parameters page breaking
+
 Version 1.5.0
 + Allow template overriding of CSS file
 ^ Allow specification of the module from the bottom or the top of the page
