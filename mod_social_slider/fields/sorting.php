@@ -2,7 +2,7 @@
 /**
  * @package    JJ_Social_Slider
  * @author     JoomJunk <admin@joomjunk.co.uk>
- * @copyright  Copyright (C) 2011 - 2013 JoomJunk. All Rights Reserved
+ * @copyright  Copyright (C) 2011 - 2014 JoomJunk. All Rights Reserved
  * @license    GPL v3.0 or later http://www.gnu.org/licenses/gpl-3.0.html
  */
 
@@ -149,14 +149,15 @@ class JFormFieldSorting extends JFormField
 		// Explode the options
 		$items = explode(',', $this->value);
 
-		echo '<ul id="sortable">';
+		$input = '<ul id="sortable">';
 
 		foreach ($items as $item)
 		{
-			echo '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
+			$input .= '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
 		}
 
-		echo '</ul>
+		$input .= '</ul>
 		<input type="hidden" name="' . $this->name . '" value="' . $this->value . '" id="' . $this->id . '" />';
+		return $input;
 	}
 }

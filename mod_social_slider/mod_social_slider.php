@@ -2,7 +2,7 @@
 /**
 * @package    JJ_Social_Slider
 * @author     JoomJunk <admin@joomjunk.co.uk>
-* @copyright  Copyright (C) 2011 - 2013 JoomJunk. All Rights Reserved
+* @copyright  Copyright (C) 2011 - 2014 JoomJunk. All Rights Reserved
 * @license    GPL v3.0 or later http://www.gnu.org/licenses/gpl-3.0.html
 */
 
@@ -60,6 +60,7 @@ $slides = array(
 $style1 = 'ul#jj_sl_navigation li a {'
 		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
+		. 'color:' . $params->get('text_colour') . ' !important;'
 		. '}';
 $document->addStyleDeclaration($style1);
 
@@ -116,7 +117,7 @@ if ($position == "left")
 	$style = "";        
         $style .= 'ul#jj_sl_navigation { '
         . $position . ':0px;'
-        . 'top:' . $params->get('top') . 'px;'
+        . $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
         . '}'
         . 'ul#jj_sl_navigation li:hover { '
         . 'margin-left: 0px;'
@@ -181,7 +182,7 @@ elseif ($position == "right")
 	$style = "";
         $style .= 'ul#jj_sl_navigation { '
                 . $position . ':0px;'
-                . 'top:' . $params->get('top') . 'px;'
+                . $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
                 . '}'
                 . 'ul#jj_sl_navigation li:hover { '
                 . 'right: 0px;'

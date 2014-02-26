@@ -2,15 +2,14 @@
 /**
 * @package    JJ_Social_Slider
 * @author     JoomJunk <admin@joomjunk.co.uk>
-* @copyright  Copyright (C) 2011 - 2013 JoomJunk. All Rights Reserved
+* @copyright  Copyright (C) 2011 - 2014 JoomJunk. All Rights Reserved
 * @license    GPL v3 http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 // No direct access
 defined('_JEXEC')  or die('Restricted access');
 
-$document = JFactory::getDocument();
-JHtml::_('stylesheet', JUri::root() . 'media/mod_social_slider/css/style.css'); 
+JHtml::_('stylesheet', 'mod_social_slider/style.css', array(), true);
 
 if ($params->get('tab', 0) == 0)
 {
