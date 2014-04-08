@@ -31,11 +31,10 @@ ul#jj_sl_navigation li a {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-	
 }
 ul#jj_sl_navigation li a .jj_social_text {
     display: inline-block;
-	width: 125px;	
+	width: 130px;	
 }
 ul#jj_sl_navigation .facebook a:hover{ background-color: #3B5998; }
 ul#jj_sl_navigation .twitter a:hover{ background-color: #62BDB2; }
