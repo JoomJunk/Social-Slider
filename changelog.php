@@ -15,6 +15,11 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.5.2
+# Added missing span to prevent text overlapping
+# Added missing language string for parameter description
+^ Increased span width by 5px
+
 Version 1.5.1 (IMPORTANT BUG FIX FOR JOOMLA 3.1 USERS)
 + Added background colour transition
 # Fixed Joomla 3.1 module parameters page breaking
