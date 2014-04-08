@@ -7,7 +7,7 @@
 	<license>http://www.gnu.org/licenses/gpl-3.0.html</license> 
 	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
 	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
-	<version>1.5.1</version>
+	<version>1.5.2</version>
 	
 	<files>
 		<filename module="mod_social_slider">mod_social_slider.php</filename>
@@ -219,7 +219,7 @@
 					<option value="right">JJ_SOCIAL_SLIDER_RIGHT</option>
 					<option value="rtl">JJ_SOCIAL_SLIDER_LANGUAGE_DEFINED</option>
 				</field>
-				<field name="top" type="text" default="10" label="JJ_SOCIAL_SLIDER_TOP" description="JJ_SOCIAL_SLIDER_TOP_DESC" />		
+				<field name="top" type="text" default="10" label="JJ_SOCIAL_SLIDER_TOP" description="JJ_SOCIAL_SLIDER_TOP_BOTTOM_MARGIN_DESC" />		
 				<field name="top_bottom" type="list" default="top" label="JJ_SOCIAL_SLIDER_TOP_BOTTOM" description="JJ_SOCIAL_SLIDER_TOP_BOTTOM_DESC">
 					<option value="top">JJ_SOCIAL_SLIDER_TOP</option>
 					<option value="bottom">JJ_SOCIAL_SLIDER_BOTTOM</option>
