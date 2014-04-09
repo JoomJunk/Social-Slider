@@ -39,7 +39,7 @@ foreach ($order as $item)
 		}
 		else
 		{
-			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . $params->get($key . '_text') . '</span></a></li>';
+			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_($params->get($key . '_text')) . '</span></a></li>';
 		}
 	}
 }
