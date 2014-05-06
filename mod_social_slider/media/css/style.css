@@ -35,7 +35,8 @@ ul#jj_sl_navigation li a {
 }
 ul#jj_sl_navigation li a .jj_social_text {
 	display: inline-block;
-	width: 130px;        
+	width: 130px;
+	text-transform: inherit;
 }
 ul#jj_sl_navigation .facebook a:hover{ background-color: #3B5998; }
 ul#jj_sl_navigation .twitter a:hover{ background-color: #62BDB2; }
