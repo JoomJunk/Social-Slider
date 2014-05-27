@@ -129,14 +129,14 @@ if ($position == "left")
         foreach ($slides as $slide => $social){
                 if (strpos($social, "custom") === false)
                 {
-                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
                                 background-position: 144px 50%;
                                 background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
                          }';
                 }
                 else
                 {
-                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
                                 background-position: 144px 50%;
                                 background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
                          }';
@@ -193,14 +193,14 @@ elseif ($position == "right")
         foreach ($slides as $slide => $social){
                 if (strpos($social, "custom") === false)
                 {
-                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
                                 background-position: 4px 50%;
                                 background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
                          }';
                 }
                 else
                 {
-                        $style .= 'ul#jj_sl_navigation .' . $social . ' a {
+                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
                                 background-position: 4px 50%;
                                 background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
                          }';
@@ -208,19 +208,19 @@ elseif ($position == "right")
         }
 }
 
-$custom_css = 'ul#jj_sl_navigation .custom1 a:hover{
+$custom_css = 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
 				background-color: ' . $params->get('custom1_colour') . ';
 			   }
-			   ul#jj_sl_navigation .custom2 a:hover{
+			   ul#jj_sl_navigation .jj_sl_custom2 a:hover{
 				background-color: ' . $params->get('custom2_colour') . ';
 			   }
-			   ul#jj_sl_navigation .custom3 a:hover{
+			   ul#jj_sl_navigation .jj_sl_custom3 a:hover{
 				background-color: ' . $params->get('custom3_colour') . ';
 			   }
-			   ul#jj_sl_navigation .custom4 a:hover{
+			   ul#jj_sl_navigation .jj_sl_custom4 a:hover{
 				background-color: ' . $params->get('custom4_colour') . ';
 			   }
-			   ul#jj_sl_navigation .custom5 a:hover{
+			   ul#jj_sl_navigation .jj_sl_custom5 a:hover{
 				background-color: ' . $params->get('custom5_colour') . ';
 			   }';
 $document->addStyleDeclaration($custom_css);
