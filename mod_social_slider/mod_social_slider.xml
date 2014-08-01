@@ -124,7 +124,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="tumblr_link" default="http://tumblr.com" type="text" size="50" lasbel="JJ_SOCIAL_SLIDER_TUMBLR_LINK" description="JJ_SOCIAL_SLIDER_TUMBLR_LINK_DESC" />
+				<field name="tumblr_link" default="http://tumblr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TUMBLR_LINK" description="JJ_SOCIAL_SLIDER_TUMBLR_LINK_DESC" />
 
 				<field name="sep12" type="sep" label="COM_MODULES_GITHUB_FIELDSET_LABEL" />
 				
