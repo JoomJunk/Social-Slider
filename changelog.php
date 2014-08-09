@@ -15,6 +15,14 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.5.4
++ Used more unique naming convertions to prevent overrides
+- Removed unnecessary jQuery file for (Joomla 3.2)
+^ Updated jQuery to 1.11.1 (Joomla 2.5/3.1)
+
+Version 1.5.3
++ Custom Slide text now translatable
+
 Version 1.5.2
 # Added missing span to prevent text overlapping
 # Added missing language string for parameter description

@@ -35,11 +35,11 @@ foreach ($order as $item)
 	{
 		if ($parts[1] < 16)
 		{
-			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . $uppercase . '') . '</span></a></li>';
+			echo '<li class="jj_sl_' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . $uppercase . '') . '</span></a></li>';
 		}
 		else
 		{
-			echo '<li class="' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_($params->get($key . '_text')) . '</span></a></li>';
+			echo '<li class="jj_sl_' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_($params->get($key . '_text')) . '</span></a></li>';
 		}
 	}
 }

@@ -35,44 +35,45 @@ ul#jj_sl_navigation li a {
 }
 ul#jj_sl_navigation li a .jj_social_text {
 	display: inline-block;
-	width: 130px;        
+	width: 130px;
+	text-transform: inherit;
 }
-ul#jj_sl_navigation .facebook a:hover{ background-color: #3B5998; }
-ul#jj_sl_navigation .twitter a:hover{ background-color: #62BDB2; }
-ul#jj_sl_navigation .google a:hover{ background-color: #DB4A39; }
-ul#jj_sl_navigation .myspace a:hover{ background-color: #3B64B3; }
-ul#jj_sl_navigation .youtube a:hover{ background-color: #CC252C; }
-ul#jj_sl_navigation .linkedin a:hover{ background-color: #4F93B3; }
-ul#jj_sl_navigation .steam a:hover{ background-color: #111111; }
-ul#jj_sl_navigation .lastfm a:hover{ background-color: #bf0d1c; }
-ul#jj_sl_navigation .pinterest a:hover{ background-color: #b61d23; }
-ul#jj_sl_navigation .soundcloud a:hover{ background-color: #ff5419; }
-ul#jj_sl_navigation .tumblr a:hover{ background-color: #304e6c; }
-ul#jj_sl_navigation .github a:hover{ background-color: #222222; }
-ul#jj_sl_navigation .flickr a:hover{ background-color: #ff0084; }
-ul#jj_sl_navigation .rss a:hover{ background-color: #FF6600; }
-ul#jj_sl_navigation .vimeo a:hover{ background-color: #1BB7EA; }
+ul#jj_sl_navigation .jj_sl_facebook a:hover{ background-color: #3B5998; }
+ul#jj_sl_navigation .jj_sl_twitter a:hover{ background-color: #62BDB2; }
+ul#jj_sl_navigation .jj_sl_google a:hover{ background-color: #DB4A39; }
+ul#jj_sl_navigation .jj_sl_myspace a:hover{ background-color: #3B64B3; }
+ul#jj_sl_navigation .jj_sl_youtube a:hover{ background-color: #CC252C; }
+ul#jj_sl_navigation .jj_sl_linkedin a:hover{ background-color: #4F93B3; }
+ul#jj_sl_navigation .jj_sl_steam a:hover{ background-color: #111111; }
+ul#jj_sl_navigation .jj_sl_lastfm a:hover{ background-color: #bf0d1c; }
+ul#jj_sl_navigation .jj_sl_pinterest a:hover{ background-color: #b61d23; }
+ul#jj_sl_navigation .jj_sl_soundcloud a:hover{ background-color: #ff5419; }
+ul#jj_sl_navigation .jj_sl_tumblr a:hover{ background-color: #304e6c; }
+ul#jj_sl_navigation .jj_sl_github a:hover{ background-color: #222222; }
+ul#jj_sl_navigation .jj_sl_flickr a:hover{ background-color: #ff0084; }
+ul#jj_sl_navigation .jj_sl_rss a:hover{ background-color: #FF6600; }
+ul#jj_sl_navigation .jj_sl_vimeo a:hover{ background-color: #1BB7EA; }
 
-ul#jj_sl_navigation .facebook a:hover, 
-ul#jj_sl_navigation .twitter a:hover, 
-ul#jj_sl_navigation .google a:hover, 
-ul#jj_sl_navigation .myspace a:hover,
-ul#jj_sl_navigation .youtube a:hover,
-ul#jj_sl_navigation .linkedin a:hover,
-ul#jj_sl_navigation .steam a:hover,
-ul#jj_sl_navigation .lastfm a:hover,
-ul#jj_sl_navigation .pinterest a:hover,
-ul#jj_sl_navigation .soundcloud a:hover,
-ul#jj_sl_navigation .tumblr a:hover,
-ul#jj_sl_navigation .github a:hover,
-ul#jj_sl_navigation .flickr a:hover,
-ul#jj_sl_navigation .rss a:hover,
-ul#jj_sl_navigation .vimeo a:hover,
-ul#jj_sl_navigation .custom1 a:hover,
-ul#jj_sl_navigation .custom2 a:hover,
-ul#jj_sl_navigation .custom3 a:hover,
-ul#jj_sl_navigation .custom4 a:hover,
-ul#jj_sl_navigation .custom5 a:hover{
+ul#jj_sl_navigation .jj_sl_facebook a:hover, 
+ul#jj_sl_navigation .jj_sl_twitter a:hover, 
+ul#jj_sl_navigation .jj_sl_google a:hover, 
+ul#jj_sl_navigation .jj_sl_myspace a:hover,
+ul#jj_sl_navigation .jj_sl_youtube a:hover,
+ul#jj_sl_navigation .jj_sl_linkedin a:hover,
+ul#jj_sl_navigation .jj_sl_steam a:hover,
+ul#jj_sl_navigation .jj_sl_lastfm a:hover,
+ul#jj_sl_navigation .jj_sl_pinterest a:hover,
+ul#jj_sl_navigation .jj_sl_soundcloud a:hover,
+ul#jj_sl_navigation .jj_sl_tumblr a:hover,
+ul#jj_sl_navigation .jj_sl_github a:hover,
+ul#jj_sl_navigation .jj_sl_flickr a:hover,
+ul#jj_sl_navigation .jj_sl_rss a:hover,
+ul#jj_sl_navigation .jj_sl_vimeo a:hover,
+ul#jj_sl_navigation .jj_sl_custom1 a:hover,
+ul#jj_sl_navigation .jj_sl_custom2 a:hover,
+ul#jj_sl_navigation .jj_sl_custom3 a:hover,
+ul#jj_sl_navigation .jj_sl_custom4 a:hover,
+ul#jj_sl_navigation .jj_sl_custom5 a:hover{
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
