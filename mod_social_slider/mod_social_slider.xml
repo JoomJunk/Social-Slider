@@ -242,10 +242,6 @@
 					<option value="white">JJ_SOCIAL_SLIDER_ICONS_WHITE</option>
 					<option value="black">JJ_SOCIAL_SLIDER_ICONS_BLACK</option>
 				</field>
-				<field name="jquery_css" type="radio" default="1" label="JJ_SOCIAL_SLIDER_JQUERY_CSS" description="JJ_SOCIAL_SLIDER_JQUERY_CSS_DESC">
-					<option value="0">JJ_SOCIAL_SLIDER_JQUERY</option>
-					<option value="1">JJ_SOCIAL_SLIDER_CSS</option>
-				</field>
 				<field name="tab" type="radio" default="0" label="JJ_SOCIAL_SLIDER_TAB" description="JJ_SOCIAL_SLIDER_TAB_DESC">
 					<option value="0">JJ_SOCIAL_SLIDER_TAB_NEW</option>
 					<option value="1">JJ_SOCIAL_SLIDER_TAB_SAME</option>

@@ -56,33 +56,44 @@ class JFormFieldSorting extends JFormField
 			'sort_19' => JText::_('COM_MODULES_CUSTOM4_FIELDSET_LABEL'),
 			'sort_20' => JText::_('COM_MODULES_CUSTOM5_FIELDSET_LABEL')
 		);
-		$document = JFactory::getDocument();
+		$doc = JFactory::getDocument();
 
 		// Inject jQuery onto the page
-		JHtml::_('jquery.framework');
+		if (version_compare(JVERSION,'3.0.0','ge'))
+		{
+			JHtml::_('jquery.framework');
+		}
+		else
+		{
+			if(!JFactory::getApplication()->get('jquery')){
+				JFactory::getApplication()->set('jquery',true);
+				$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
+				$doc->addScriptDeclaration('jQuery.noConflict();');
+			}
+		}
 
 		// Next insert the jQuery plugin
-		JHtml::_('script', 'mod_social_slider/jquery-sortable.js', false, true);
+		JHtml::_('script', JUri::root() . 'media/mod_social_slider/jquery-sortable.js');
 
 		// Now initialize the plugin
-		$document->addScriptDeclaration('
-		jQuery(document).ready(function($) {
-			var group = $("#sortable").sortable({
-				pullPlaceholder: false,
-				onDrop: function (item, container, _super) {
-					$("#' . $this->id . '").val(group.sortable("serialize").get().join("\n"))
-					_super(item, container)
-				},
-				serialize: function (parent, children, isContainer) {
-					return isContainer ? children.join() : parent.attr("id")
-				},
-			})
-		});
+		$doc->addScriptDeclaration('
+			jQuery(document).ready(function($) {
+				var group = $("#sortable").sortable({
+					pullPlaceholder: false,
+					onDrop: function (item, container, _super) {
+						$("#' . $this->id . '").val(group.sortable("serialize").get().join("\n"))
+						_super(item, container)
+					},
+					serialize: function (parent, children, isContainer) {
+						return isContainer ? children.join() : parent.attr("id")
+					},
+				})
+			});
 		');
 
 		// Add in relevant styles
 		$icon = JUri::root() . 'media/mod_social_slider/icons/';
-		$document->addStyleDeclaration('
+		$doc->addStyleDeclaration('
 			body.dragging, body.dragging * {
 			  cursor: move !important;
 			}
