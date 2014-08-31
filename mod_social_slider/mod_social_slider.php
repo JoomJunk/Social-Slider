@@ -27,12 +27,7 @@ else
 	$position = $params->get('position', 'left');
 }
 
-$document = JFactory::getDocument();
-
-if ($params->get('jquery_css') == 0)
-{
-	JHtml::_('jquery.framework');
-}
+$doc = JFactory::getDocument();
 
 $slides = array(
         'sort_1' => 'facebook',
@@ -57,19 +52,20 @@ $slides = array(
         'sort_20' => 'custom5'
 );
 
-$style1 = 'ul#jj_sl_navigation li a {'
+$css = "";
+
+$css .= 'ul#jj_sl_navigation li a {'
 		. 'background-color:' . $params->get('slide_colour') . ';'
 		. 'text-align:' . $position . ';'
 		. 'color:' . $params->get('text_colour') . ' !important;'
 		. '}';
-$document->addStyleDeclaration($style1);
-
+		
 if ($params->get('disable') == 1)
 {
 	$mobile = '@media screen and (max-width: ' . $params->get("mobile_width", "480px") . '){'
 		. 'ul#jj_sl_navigation { display: none; }'
 		. '}';
-	$document->addStyleDeclaration($mobile);
+	$doc->addStyleDeclaration($mobile);
 }
 
 if ($params->get('disable') == 2)
@@ -77,154 +73,109 @@ if ($params->get('disable') == 2)
 	$mobile_tablet = '@media screen and (max-width: ' . $params->get("tablet_width", "768px") . '){'
 		. 'ul#jj_sl_navigation { display: none; }'
 		. '}';
-	$document->addStyleDeclaration($mobile_tablet);
+	$doc->addStyleDeclaration($mobile_tablet);
 }
 
 if ($position == "left")
 {
-	if ($params->get('jquery_css') == 0)
-	{
-		$js_left = '
-		(function($){
-			$(function() {
-				$("#jj_sl_navigation a").css("marginLeft", "-140px")
-				$("#jj_sl_navigation > li").hover(
-					function () {
-						$("a",$(this)).stop().animate({"marginLeft":"-2px"},200);
-					},
-					function () {
-						$("a",$(this)).stop().animate({"marginLeft":"-140px"},200);
-					}
-				);
-			});
-		})(jQuery);
-		';
-		$css = '';
-		$document->addScriptDeclaration($js_left);
-	}
 
-	else
-	{
-		$css = 'ul#jj_sl_navigation li { '
-			. 'margin-left: -140px;'
-			. '-webkit-transition: margin-left 0.3s;'
-			. '-moz-transition: margin-left 0.3s;'
-			. '-ms-transition: margin-left 0.3s;'
-			. '-o-transition: margin-left 0.3s;'
-			. 'transition: margin-left 0.3s;'
-			. '}';
+	$css .= 'ul#jj_sl_navigation li { '
+		. 'left: 0;'
+		. 'position:relative;'
+		. '-webkit-transition: left 0.3s;'
+		. '-moz-transition: left 0.3s;'
+		. '-ms-transition: left 0.3s;'
+		. '-o-transition: left 0.3s;'
+		. 'transition: left 0.3s;'
+	. '}';
+      
+	$css .= 'ul#jj_sl_navigation { '
+		. $position . ': -140px;'
+		. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
+		. '}'
+		. 'ul#jj_sl_navigation li:hover { '
+		. 'left: 140px;'
+		. '}'
+		. 'ul#jj_sl_navigation li a { '
+		. 'padding: 11px 0px 11px 10px;'
+		. 'margin-left: -2px;'
+	. '}';
+	
+	foreach ($slides as $slide => $social){
+		if (strpos($social, "custom") === false)
+		{
+			$css .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
+					background-position: 144px 50%;
+					background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
+			 }';
+		}
+		else
+		{
+			$css .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
+					background-position: 144px 50%;
+					background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
+			 }';
+		}
 	}
-	$style = "";        
-        $style .= 'ul#jj_sl_navigation { '
-        . $position . ':0px;'
-        . $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
-        . '}'
-        . 'ul#jj_sl_navigation li:hover { '
-        . 'margin-left: 0px;'
-        . '}'
-        . 'ul#jj_sl_navigation li a { '
-        . 'padding: 11px 0px 11px 10px;'
-        . 'margin-left: -2px;'
-        . '}';
-        foreach ($slides as $slide => $social){
-                if (strpos($social, "custom") === false)
-                {
-                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
-                                background-position: 144px 50%;
-                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
-                         }';
-                }
-                else
-                {
-                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
-                                background-position: 144px 50%;
-                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
-                         }';
-                }
-        }
 }
 elseif ($position == "right")
 {
-	if ($params->get('jquery_css') == 0)
-	{
-		$js_right = '
-		(function($){
-			$(function() {
-				$("#jj_sl_navigation a").css("marginLeft", "140px")
-				$("#jj_sl_navigation > li").hover(
-					function () {
-						$("a",$(this)).stop().animate({"marginLeft":"2px"},200);
-					},
-					function () {
-						$("a",$(this)).stop().animate({"marginLeft":"140px"},200);
-					}
-				);
-			});
-		})(jQuery);
-		';
-		$css = 'ul#jj_sl_navigation li {position: relative;} ul#jj_sl_navigation{right: -140px;}';
-		$document->addScriptDeclaration($js_right);
-	}
 
-	else
-	{
-		$css = 'ul#jj_sl_navigation li { '
-			. 'right: -138px;'
-			. 'position:relative;'
-			. '-webkit-transition: right 0.3s;'
-			. '-moz-transition: right 0.3s;'
-			. '-ms-transition: right 0.3s;'
-			. '-o-transition: right 0.3s;'
-			. 'transition: right 0.3s;'
-			. '}';
-	}
+	$css .= 'ul#jj_sl_navigation li { '
+		. 'right: 0;'
+		. 'position:relative;'
+		. '-webkit-transition: right 0.3s;'
+		. '-moz-transition: right 0.3s;'
+		. '-ms-transition: right 0.3s;'
+		. '-o-transition: right 0.3s;'
+		. 'transition: right 0.3s;'
+	. '}';
+
+	$css .= 'ul#jj_sl_navigation { '
+		. $position . ':-140px;'
+		. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
+		. '}'
+		. 'ul#jj_sl_navigation li:hover { '
+		. 'right: 140px;'
+		. '}'
+		. 'ul#jj_sl_navigation li a { '
+		. 'padding: 11px 10px 11px 0px;'
+	. '}';
 	
-	$style = "";
-        $style .= 'ul#jj_sl_navigation { '
-                . $position . ':0px;'
-                . $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
-                . '}'
-                . 'ul#jj_sl_navigation li:hover { '
-                . 'right: 0px;'
-                . '}'
-                . 'ul#jj_sl_navigation li a { '
-                . 'padding: 11px 10px 11px 0px;'
-                . '}';
-        foreach ($slides as $slide => $social){
-                if (strpos($social, "custom") === false)
-                {
-                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
-                                background-position: 4px 50%;
-                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
-                         }';
-                }
-                else
-                {
-                        $style .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
-                                background-position: 4px 50%;
-                                background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
-                         }';
-                }
-        }
+	foreach ($slides as $slide => $social){
+		if (strpos($social, "custom") === false)
+		{
+			$css .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
+					background-position: 4px 50%;
+					background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $social . '-' . $params->get('icon_colour') . '.png);
+			 }';
+		}
+		else
+		{
+			$css .= 'ul#jj_sl_navigation .jj_sl_' . $social . ' a {
+					background-position: 4px 50%;
+					background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
+			 }';
+		}
+	}
 }
 
-$custom_css = 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
-				background-color: ' . $params->get('custom1_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom2 a:hover{
-				background-color: ' . $params->get('custom2_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom3 a:hover{
-				background-color: ' . $params->get('custom3_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom4 a:hover{
-				background-color: ' . $params->get('custom4_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom5 a:hover{
-				background-color: ' . $params->get('custom5_colour') . ';
-			   }';
-$document->addStyleDeclaration($custom_css);
-$document->addStyleDeclaration($style);
-$document->addStyleDeclaration($css);
+$css .= 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
+			background-color: ' . $params->get('custom1_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom2 a:hover{
+			background-color: ' . $params->get('custom2_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom3 a:hover{
+			background-color: ' . $params->get('custom3_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom4 a:hover{
+			background-color: ' . $params->get('custom4_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom5 a:hover{
+			background-color: ' . $params->get('custom5_colour') . ';
+		}';
+		
+$doc->addStyleDeclaration($css);
 
 require JModuleHelper::getLayoutPath('mod_social_slider');

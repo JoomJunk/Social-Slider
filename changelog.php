@@ -15,6 +15,12 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.5.5
+# Slider container will no longer overlap other elements
+^ CSS enhancements
+- Removed jQuery option and thus dropping support for IE8
+- Removed support for Joomla 3.0 and 3.1
+
 Version 1.5.4
 + Used more unique naming convertions to prevent overrides
 - Removed unnecessary jQuery file for (Joomla 3.2)

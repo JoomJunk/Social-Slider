@@ -56,7 +56,7 @@ class JFormFieldSorting extends JFormField
 			'sort_19' => JText::_('COM_MODULES_CUSTOM4_FIELDSET_LABEL'),
 			'sort_20' => JText::_('COM_MODULES_CUSTOM5_FIELDSET_LABEL')
 		);
-		$document = JFactory::getDocument();
+		$doc = JFactory::getDocument();
 
 		// Inject jQuery onto the page
 		JHtml::_('jquery.framework');
@@ -65,24 +65,24 @@ class JFormFieldSorting extends JFormField
 		JHtml::_('script', 'mod_social_slider/jquery-sortable.js', false, true);
 
 		// Now initialize the plugin
-		$document->addScriptDeclaration('
-		jQuery(document).ready(function($) {
-			var group = $("#sortable").sortable({
-				pullPlaceholder: false,
-				onDrop: function (item, container, _super) {
-					$("#' . $this->id . '").val(group.sortable("serialize").get().join("\n"))
-					_super(item, container)
-				},
-				serialize: function (parent, children, isContainer) {
-					return isContainer ? children.join() : parent.attr("id")
-				},
-			})
-		});
+		$doc->addScriptDeclaration('
+			jQuery(document).ready(function($) {
+				var group = $("#sortable").sortable({
+					pullPlaceholder: false,
+					onDrop: function (item, container, _super) {
+						$("#' . $this->id . '").val(group.sortable("serialize").get().join("\n"))
+						_super(item, container)
+					},
+					serialize: function (parent, children, isContainer) {
+						return isContainer ? children.join() : parent.attr("id")
+					},
+				})
+			});
 		');
 
 		// Add in relevant styles
 		$icon = JUri::root() . 'media/mod_social_slider/icons/';
-		$document->addStyleDeclaration('
+		$doc->addStyleDeclaration('
 			body.dragging, body.dragging * {
 			  cursor: move !important;
 			}
