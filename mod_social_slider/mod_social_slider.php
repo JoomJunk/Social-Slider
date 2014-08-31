@@ -121,7 +121,7 @@ elseif ($position == "right")
 {
 
 	$css .= 'ul#jj_sl_navigation li { '
-		. 'right: -138px;'
+		. 'right: 0px;'
 		. 'position:relative;'
 		. '-webkit-transition: right 0.3s;'
 		. '-moz-transition: right 0.3s;'
@@ -131,11 +131,11 @@ elseif ($position == "right")
 	. '}';
 
 	$css .= 'ul#jj_sl_navigation { '
-		. $position . ':0px;'
+		. $position . ':-140px;'
 		. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
 		. '}'
 		. 'ul#jj_sl_navigation li:hover { '
-		. 'right: 0px;'
+		. 'right: -140px;'
 		. '}'
 		. 'ul#jj_sl_navigation li a { '
 		. 'padding: 11px 10px 11px 0px;'
@@ -159,22 +159,22 @@ elseif ($position == "right")
 	}
 }
 
-$custom_css = 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
-				background-color: ' . $params->get('custom1_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom2 a:hover{
-				background-color: ' . $params->get('custom2_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom3 a:hover{
-				background-color: ' . $params->get('custom3_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom4 a:hover{
-				background-color: ' . $params->get('custom4_colour') . ';
-			   }
-			   ul#jj_sl_navigation .jj_sl_custom5 a:hover{
-				background-color: ' . $params->get('custom5_colour') . ';
-			   }';
-$doc->addStyleDeclaration($custom_css);
+$css. = 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
+			background-color: ' . $params->get('custom1_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom2 a:hover{
+			background-color: ' . $params->get('custom2_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom3 a:hover{
+			background-color: ' . $params->get('custom3_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom4 a:hover{
+			background-color: ' . $params->get('custom4_colour') . ';
+		   }
+		   ul#jj_sl_navigation .jj_sl_custom5 a:hover{
+			background-color: ' . $params->get('custom5_colour') . ';
+		}';
+		
 $doc->addStyleDeclaration($css);
 
 require JModuleHelper::getLayoutPath('mod_social_slider');
