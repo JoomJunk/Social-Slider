@@ -59,21 +59,10 @@ class JFormFieldSorting extends JFormField
 		$doc = JFactory::getDocument();
 
 		// Inject jQuery onto the page
-		if (version_compare(JVERSION,'3.0.0','ge'))
-		{
-			JHtml::_('jquery.framework');
-		}
-		else
-		{
-			if(!JFactory::getApplication()->get('jquery')){
-				JFactory::getApplication()->set('jquery',true);
-				$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js');
-				$doc->addScriptDeclaration('jQuery.noConflict();');
-			}
-		}
+		JHtml::_('jquery.framework');
 
 		// Next insert the jQuery plugin
-		JHtml::_('script', JUri::root() . 'media/mod_social_slider/jquery-sortable.js');
+		JHtml::_('script', 'mod_social_slider/jquery-sortable.js', false, true);
 
 		// Now initialize the plugin
 		$doc->addScriptDeclaration('
