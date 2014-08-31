@@ -80,20 +80,21 @@ if ($position == "left")
 {
 
 	$css .= 'ul#jj_sl_navigation li { '
-		. 'margin-left: -140px;'
-		. '-webkit-transition: margin-left 0.3s;'
-		. '-moz-transition: margin-left 0.3s;'
-		. '-ms-transition: margin-left 0.3s;'
-		. '-o-transition: margin-left 0.3s;'
-		. 'transition: margin-left 0.3s;'
+		. 'left: 0;'
+		. 'position:relative;'
+		. '-webkit-transition: left 0.3s;'
+		. '-moz-transition: left 0.3s;'
+		. '-ms-transition: left 0.3s;'
+		. '-o-transition: left 0.3s;'
+		. 'transition: left 0.3s;'
 	. '}';
       
 	$css .= 'ul#jj_sl_navigation { '
-		. $position . ':0px;'
+		. $position . ': -140px;'
 		. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
 		. '}'
 		. 'ul#jj_sl_navigation li:hover { '
-		. 'margin-left: 0px;'
+		. 'left: 140px;'
 		. '}'
 		. 'ul#jj_sl_navigation li a { '
 		. 'padding: 11px 0px 11px 10px;'
@@ -121,7 +122,7 @@ elseif ($position == "right")
 {
 
 	$css .= 'ul#jj_sl_navigation li { '
-		. 'right: 0px;'
+		. 'right: 0;'
 		. 'position:relative;'
 		. '-webkit-transition: right 0.3s;'
 		. '-moz-transition: right 0.3s;'
@@ -135,7 +136,7 @@ elseif ($position == "right")
 		. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;'
 		. '}'
 		. 'ul#jj_sl_navigation li:hover { '
-		. 'right: -140px;'
+		. 'right: 140px;'
 		. '}'
 		. 'ul#jj_sl_navigation li a { '
 		. 'padding: 11px 10px 11px 0px;'
@@ -159,7 +160,7 @@ elseif ($position == "right")
 	}
 }
 
-$css. = 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
+$css .= 'ul#jj_sl_navigation .jj_sl_custom1 a:hover{
 			background-color: ' . $params->get('custom1_colour') . ';
 		   }
 		   ul#jj_sl_navigation .jj_sl_custom2 a:hover{
