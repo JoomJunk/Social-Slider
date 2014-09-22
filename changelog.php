@@ -15,6 +15,11 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.5.6
++ Added French languge pack
++ Added Dutch(Belgium) languge pack
+^ Styling tweaks/enhancements
+
 Version 1.5.5
 # Slider container will no longer overlap other elements
 ^ CSS enhancements
