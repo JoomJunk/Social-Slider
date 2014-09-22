@@ -33,6 +33,10 @@
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.mod_social_slider.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_social_slider.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_social_slider.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.mod_social_slider.sys.ini</language>
+		<language tag="nl-BE">nl-BE/nl-BE.mod_social_slider.ini</language>
+		<language tag="nl-BE">nl-BE/nl-BE.mod_social_slider.sys.ini</language>
 	</languages>
 
 	<config>
