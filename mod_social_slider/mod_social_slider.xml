@@ -161,6 +161,8 @@
 					<option value="1">JJ_ON</option>
 				</field>
 				<field name="vimeo_link" default="http://vimeo.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_VIMEO_LINK" description="JJ_SOCIAL_SLIDER_VIMEO_LINK_DESC" />
+				
+				<field name="pro" type="pro" label="" />
 			</fieldset>
 			
 			<fieldset name="CUSTOM">
