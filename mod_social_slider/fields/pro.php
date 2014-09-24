@@ -19,7 +19,7 @@ class JFormFieldPro extends JFormField
 	/**
 	 * @var string
 	 */
-	protected $type = 'Sep';
+	protected $type = 'Pro';
 
 	/**
 	 * @return string
