@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.5.7  (Important)
+# Fixed version preventing updates from working
+
 Version 1.5.6
 + Added French languge pack
 + Added Dutch(Belgium) languge pack
