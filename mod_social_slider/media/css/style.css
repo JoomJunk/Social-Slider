@@ -17,6 +17,7 @@ ul#jj_sl_navigation li {
     overflow: hidden;
 	direction: ltr;
 	border: 0;
+	display: block;
 }
 
 ul#jj_sl_navigation li a {
