@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+### WIP
++ CSS enhancements to prevent styles being overridden 
+
 Version 1.5.7  (Important)
 # Fixed version preventing updates from working
 
