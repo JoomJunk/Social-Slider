@@ -15,8 +15,11 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
-### WIP
-+ CSS enhancements to prevent styles being overridden 
+Version 1.6.0
++ Added German languge pack
++ Added Russian languge pack
+# Fixed box-sizing issue from Bootstrap
+# Fixed some CSS styling being overridden
 
 Version 1.5.7  (Important)
 # Fixed version preventing updates from working
