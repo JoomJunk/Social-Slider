@@ -30,6 +30,7 @@ ul#jj_sl_navigation li a {
 	font-size: 12px;
 	font-weight: bold;
 	text-transform: inherit;
+	box-sizing: content-box;
 	-webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
