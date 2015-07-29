@@ -256,6 +256,10 @@
 					<option value="0">JJ_SOCIAL_SLIDER_TAB_NEW</option>
 					<option value="1">JJ_SOCIAL_SLIDER_TAB_SAME</option>
 				</field>
+				<field name="nofollow" class="btn-group" type="radio" default="0" label="JJ_SOCIAL_SLIDER_NOFOLLOW" description="JJ_SOCIAL_SLIDER_NOFOLLOW_DESC">
+					<option value="0">JJ_OFF</option>
+					<option value="1">JJ_ON</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

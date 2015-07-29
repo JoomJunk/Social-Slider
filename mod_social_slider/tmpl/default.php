@@ -11,13 +11,17 @@ defined('_JEXEC')  or die('Restricted access');
 
 JHtml::_('stylesheet', 'mod_social_slider/style.css', array(), true);
 
+$target = '';
+$nofollow = '';
+
 if ($params->get('tab', 0) == 0)
 {
 	$target = ' target="_blank"';
 }
-else
+
+if ($params->get('nofollow', 0) == 1)
 {
-	$target = "";
+	$nofollow = ' rel="nofollow"';
 }
 
 echo '<ul id="jj_sl_navigation">';
@@ -29,17 +33,16 @@ foreach ($order as $item)
 {
 	$parts = explode('_', $item);
 	$key = $slides[$item];
-	$uppercase = strtoupper($key);
 
 	if ($params->get($key) == 1)
 	{
 		if ($parts[1] < 16)
 		{
-			echo '<li class="jj_sl_' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . $uppercase . '') . '</span></a></li>';
+			echo '<li class="jj_sl_' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . $nofollow . '><span class="jj_social_text">' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . strtoupper($key) . '') . '</span></a></li>';
 		}
 		else
 		{
-			echo '<li class="jj_sl_' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target . '><span class="jj_social_text">' . JText::_($params->get($key . '_text')) . '</span></a></li>';
+			echo '<li class="jj_sl_' . $key . '"><a href="' . $params->get($key . '_link') . '"' . $target .  $nofollow . '><span class="jj_social_text">' . JText::_($params->get($key . '_text')) . '</span></a></li>';
 		}
 	}
 }
