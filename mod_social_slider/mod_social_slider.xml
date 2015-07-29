@@ -48,7 +48,7 @@
 			<fieldset name="DEFAULT">	
 				<field name="sep1" type="sep" label="COM_MODULES_FACEBOOK_FIELDSET_LABEL" />
 							
-				<field name="facebook" default="1" type="radio" label="JJ_SOCIAL_SLIDER_FACEBOOK" description="JJ_SOCIAL_SLIDER_FACEBOOK_DESC">
+				<field name="facebook" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_FACEBOOK" description="JJ_SOCIAL_SLIDER_FACEBOOK_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -56,7 +56,7 @@
 
 				<field name="sep2" type="sep" label="COM_MODULES_TWITTER_FIELDSET_LABEL" />
 				
-				<field name="twitter" default="1" type="radio" label="JJ_SOCIAL_SLIDER_TWITTER" description="JJ_SOCIAL_SLIDER_TWITTER_DESC">
+				<field name="twitter" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_TWITTER" description="JJ_SOCIAL_SLIDER_TWITTER_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -64,7 +64,7 @@
 
 				<field name="sep3" type="sep" label="COM_MODULES_GOOGLES_FIELDSET_LABEL" />
 				
-				<field name="google" default="1" type="radio" label="JJ_SOCIAL_SLIDER_GOOGLE" description="JJ_SOCIAL_SLIDER_GOOGLE_DESC">
+				<field name="google" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_GOOGLE" description="JJ_SOCIAL_SLIDER_GOOGLE_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -72,7 +72,7 @@
 
 				<field name="sep4" type="sep" label="COM_MODULES_MYSPACE_FIELDSET_LABEL" />
 				
-				<field name="myspace" default="1" type="radio" label="JJ_SOCIAL_SLIDER_MYSPACE" description="JJ_SOCIAL_SLIDER_MYSPACE_DESC">
+				<field name="myspace" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_MYSPACE" description="JJ_SOCIAL_SLIDER_MYSPACE_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -80,7 +80,7 @@
 
 				<field name="sep5" type="sep" label="COM_MODULES_YOUTUBE_FIELDSET_LABEL" />
 				
-				<field name="youtube" default="1" type="radio" label="JJ_SOCIAL_SLIDER_YOUTUBE" description="JJ_SOCIAL_SLIDER_YOUTUBE_DESC">
+				<field name="youtube" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_YOUTUBE" description="JJ_SOCIAL_SLIDER_YOUTUBE_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -88,7 +88,7 @@
 
 				<field name="sep6" type="sep" label="COM_MODULES_LINKEDIN_FIELDSET_LABEL" />
 				
-				<field name="linkedin" default="1" type="radio" label="JJ_SOCIAL_SLIDER_LINKEDIN" description="JJ_SOCIAL_SLIDER_LINKEDIN_DESC">
+				<field name="linkedin" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_LINKEDIN" description="JJ_SOCIAL_SLIDER_LINKEDIN_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -96,7 +96,7 @@
 
 				<field name="sep7" type="sep" label="COM_MODULES_STEAM_FIELDSET_LABEL" />
 				
-				<field name="steam" default="1" type="radio" label="JJ_SOCIAL_SLIDER_STEAM" description="JJ_SOCIAL_SLIDER_STEAM_DESC">
+				<field name="steam" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_STEAM" description="JJ_SOCIAL_SLIDER_STEAM_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -104,7 +104,7 @@
 
 				<field name="sep8" type="sep" label="COM_MODULES_LASTFM_FIELDSET_LABEL" />
 				
-				<field name="lastfm" default="1" type="radio" label="JJ_SOCIAL_SLIDER_LASTFM" description="JJ_SOCIAL_SLIDER_LASTFM_DESC">
+				<field name="lastfm" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_LASTFM" description="JJ_SOCIAL_SLIDER_LASTFM_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -112,7 +112,7 @@
 
 				<field name="sep9" type="sep" label="COM_MODULES_PINTEREST_FIELDSET_LABEL" />
 				
-				<field name="pinterest" default="1" type="radio" label="JJ_SOCIAL_SLIDER_PINTEREST" description="JJ_SOCIAL_SLIDER_PINTEREST_DESC">
+				<field name="pinterest" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_PINTEREST" description="JJ_SOCIAL_SLIDER_PINTEREST_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -120,7 +120,7 @@
 	
 				<field name="sep10" type="sep" label="COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL" />
 				
-				<field name="soundcloud" default="1" type="radio" label="JJ_SOCIAL_SLIDER_SOUNDCLOUD" description="JJ_SOCIAL_SLIDER_SOUNDCLOUD_DESC">
+				<field name="soundcloud" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_SOUNDCLOUD" description="JJ_SOCIAL_SLIDER_SOUNDCLOUD_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -128,7 +128,7 @@
 	
 				<field name="sep11" type="sep" label="COM_MODULES_TUMBLR_FIELDSET_LABEL" />
 				
-				<field name="tumblr" default="1" type="radio" label="JJ_SOCIAL_SLIDER_TUMBLR" description="JJ_SOCIAL_SLIDER_TUMBLR_DESC">
+				<field name="tumblr" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_TUMBLR" description="JJ_SOCIAL_SLIDER_TUMBLR_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -136,7 +136,7 @@
 
 				<field name="sep12" type="sep" label="COM_MODULES_GITHUB_FIELDSET_LABEL" />
 				
-				<field name="github" default="1" type="radio" label="JJ_SOCIAL_SLIDER_GITHUB" description="JJ_SOCIAL_SLIDER_GITHUB_DESC">
+				<field name="github" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_GITHUB" description="JJ_SOCIAL_SLIDER_GITHUB_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -144,7 +144,7 @@
 	
 				<field name="sep13" type="sep" label="COM_MODULES_FLICKR_FIELDSET_LABEL" />
 				
-				<field name="flickr" default="1" type="radio" label="JJ_SOCIAL_SLIDER_FLICKR" description="JJ_SOCIAL_SLIDER_FLICKR_DESC">
+				<field name="flickr" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_FLICKR" description="JJ_SOCIAL_SLIDER_FLICKR_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -152,7 +152,7 @@
 
 				<field name="sep14" type="sep" label="COM_MODULES_RSS_FIELDSET_LABEL" />
 				
-				<field name="rss" default="1" type="radio" label="JJ_SOCIAL_SLIDER_RSS" description="JJ_SOCIAL_SLIDER_RSS_DESC">
+				<field name="rss" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_RSS" description="JJ_SOCIAL_SLIDER_RSS_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -160,7 +160,7 @@
 
 				<field name="sep15" type="sep" label="COM_MODULES_VIMEO_FIELDSET_LABEL" />
 				
-				<field name="vimeo" default="1" type="radio" label="JJ_SOCIAL_SLIDER_VIMEO" description="JJ_SOCIAL_SLIDER_VIMEO_DESC">
+				<field name="vimeo" default="1" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_VIMEO" description="JJ_SOCIAL_SLIDER_VIMEO_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -173,7 +173,7 @@
 
 				<field name="sep16" type="sep" label="COM_MODULES_CUSTOM1_FIELDSET_LABEL" />
 							
-				<field name="custom1" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM1" description="JJ_SOCIAL_SLIDER_CUSTOM1_DESC">
+				<field name="custom1" default="0" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM1" description="JJ_SOCIAL_SLIDER_CUSTOM1_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -184,7 +184,7 @@
 
 				<field name="sep17" type="sep" label="COM_MODULES_CUSTOM2_FIELDSET_LABEL" />
 				
-				<field name="custom2" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM2" description="JJ_SOCIAL_SLIDER_CUSTOM2_DESC">
+				<field name="custom2" default="0" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM2" description="JJ_SOCIAL_SLIDER_CUSTOM2_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -195,7 +195,7 @@
 
 				<field name="sep18" type="sep" label="COM_MODULES_CUSTOM3_FIELDSET_LABEL" />
 				
-				<field name="custom3" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM3" description="JJ_SOCIAL_SLIDER_CUSTOM3_DESC">
+				<field name="custom3" default="0" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM3" description="JJ_SOCIAL_SLIDER_CUSTOM3_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -206,7 +206,7 @@
 
 				<field name="sep19" type="sep" label="COM_MODULES_CUSTOM4_FIELDSET_LABEL" />
 				
-				<field name="custom4" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM4" description="JJ_SOCIAL_SLIDER_CUSTOM4_DESC">
+				<field name="custom4" default="0" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM4" description="JJ_SOCIAL_SLIDER_CUSTOM4_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -217,7 +217,7 @@
 
 				<field name="sep20" type="sep" label="COM_MODULES_CUSTOM5_FIELDSET_LABEL" />
 				
-				<field name="custom5" default="0" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM5" description="JJ_SOCIAL_SLIDER_CUSTOM5_DESC">
+				<field name="custom5" default="0" class="btn-group" type="radio" label="JJ_SOCIAL_SLIDER_CUSTOM5" description="JJ_SOCIAL_SLIDER_CUSTOM5_DESC">
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
@@ -248,11 +248,11 @@
 				</field>
 				<field name="tablet_width" type="text" default="768px" label="JJ_SOCIAL_SLIDER_TABLET_WIDTH" description="JJ_SOCIAL_SLIDER_TABLET_WIDTH_DESC" />
 				<field name="mobile_width" type="text" default="480px" label="JJ_SOCIAL_SLIDER_MOBILE_WIDTH" description="JJ_SOCIAL_SLIDER_MOBILE_WIDTH_DESC" />
-				<field name="icon_colour" type="radio" default="white" label="JJ_SOCIAL_SLIDER_ICON_COLOUR" description="JJ_SOCIAL_SLIDER_ICON_COLOUR_DESC">
+				<field name="icon_colour" class="btn-group" type="radio" default="white" label="JJ_SOCIAL_SLIDER_ICON_COLOUR" description="JJ_SOCIAL_SLIDER_ICON_COLOUR_DESC">
 					<option value="white">JJ_SOCIAL_SLIDER_ICONS_WHITE</option>
 					<option value="black">JJ_SOCIAL_SLIDER_ICONS_BLACK</option>
 				</field>
-				<field name="tab" type="radio" default="0" label="JJ_SOCIAL_SLIDER_TAB" description="JJ_SOCIAL_SLIDER_TAB_DESC">
+				<field name="tab" class="btn-group" type="radio" default="0" label="JJ_SOCIAL_SLIDER_TAB" description="JJ_SOCIAL_SLIDER_TAB_DESC">
 					<option value="0">JJ_SOCIAL_SLIDER_TAB_NEW</option>
 					<option value="1">JJ_SOCIAL_SLIDER_TAB_SAME</option>
 				</field>
