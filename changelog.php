@@ -15,6 +15,10 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 1.6.1
++ Added Nofollow option
+# Fixed update not running in 3.4 or later
+
 Version 1.6.0
 + Added German languge pack
 + Added Russian languge pack
