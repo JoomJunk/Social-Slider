@@ -2,7 +2,7 @@
 /**
 * @package    JJ_Social_Slider
 * @author     JoomJunk <admin@joomjunk.co.uk>
-* @copyright  Copyright (C) 2011 - 2014 JoomJunk. All Rights Reserved
+* @copyright  Copyright (C) 2011 - 2015 JoomJunk. All Rights Reserved
 * @license    GPL v3 http://www.gnu.org/licenses/gpl-3.0.html
 */
 
