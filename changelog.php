@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 2.0.1
+# Fixed CSS spirte background positions
+
 Version 2.0.0
 ^ Images compiled into sprite to improve performance
 # Fixed AdBlocker not showing icons
