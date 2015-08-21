@@ -15,6 +15,11 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 2.0.0
+^ Images compiled into sprite to improve performance
+# Fixed AdBlocker not showing icons
+$ Updated Dutch language files
+
 Version 1.6.1
 + Added Nofollow option
 # Fixed update not running in 3.4 or later
