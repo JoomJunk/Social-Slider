@@ -121,23 +121,41 @@ class JFormFieldSorting extends JFormField
 				background-size: 20px 20px !important;
 				padding-right: 25px;
 				margin: 1px 0px;
+			}			
+			ul#sortable .sort::before {
+				background: url("' . $icon . 'sprite-black.png") no-repeat;
+				content: "";
+				display: inline-block;
+				float: left;
+				height: 32px;
+				width: 32px;
+				margin-right: 20px;
+				position: relative;
+				bottom: 6px;
+			}		
+			ul#sortable #sort_1.sort::before { background-position: 0 0; }
+			ul#sortable #sort_2.sort::before { background-position: 0 -96px; }
+			ul#sortable #sort_3.sort::before { background-position: -96px 0; }
+			ul#sortable #sort_4.sort::before { background-position: -64px -32px; }
+			ul#sortable #sort_5.sort::before { background-position: -64px -96px; }
+			ul#sortable #sort_6.sort::before { background-position: -32px -32px; }
+			ul#sortable #sort_7.sort::before { background-position: -64px -64px; }
+			ul#sortable #sort_8.sort::before { background-position: 0 -32px; }
+			ul#sortable #sort_9.sort::before { background-position: -96px -32px; }
+			ul#sortable #sort_10.sort::before { background-position: -32px -64px; }
+			ul#sortable #sort_11.sort::before { background-position: -96px -64px; }
+			ul#sortable #sort_12.sort::before { background-position: -64px 0; }
+			ul#sortable #sort_13.sort::before { background-position: -32px 0; }
+			ul#sortable #sort_14.sort::before { background-position: 0 -64px; }
+			ul#sortable #sort_15.sort::before { background-position: -32px -96px; }		
+			ul#sortable #sort_15.sort::before,
+			ul#sortable #sort_16.sort::before,
+			ul#sortable #sort_17.sort::before,
+			ul#sortable #sort_18.sort::before,
+			ul#sortable #sort_19.sort::before,
+			ul#sortable #sort_20.sort::before {
+				background-position: -96px -96px; 
 			}
-			ul#sortable #sort_1 span{background: url(' . $icon . 'facebook-black.png);}
-			ul#sortable #sort_2 span{background: url(' . $icon . 'twitter-black.png);}
-			ul#sortable #sort_3 span{background: url(' . $icon . 'google-black.png);}
-			ul#sortable #sort_4 span{background: url(' . $icon . 'myspace-black.png);}
-			ul#sortable #sort_5 span{background: url(' . $icon . 'youtube-black.png);}
-			ul#sortable #sort_6 span{background: url(' . $icon . 'linkedin-black.png);}
-			ul#sortable #sort_7 span{background: url(' . $icon . 'steam-black.png); }
-			ul#sortable #sort_8 span{background: url(' . $icon . 'lastfm-black.png);}
-			ul#sortable #sort_9 span{background: url(' . $icon . 'pinterest-black.png);}
-			ul#sortable #sort_10 span{background: url(' . $icon . 'soundcloud-black.png);}
-			ul#sortable #sort_11 span{background: url(' . $icon . 'tumblr-black.png);}
-			ul#sortable #sort_12 span{background: url(' . $icon . 'github-black.png);}
-			ul#sortable #sort_13 span{background: url(' . $icon . 'flickr-black.png);}
-			ul#sortable #sort_14 span{background: url(' . $icon . 'rss-black.png);}
-			ul#sortable #sort_15 span{background: url(' . $icon . 'vimeo-black.png);}
-			ul#sortable #sort_16 span, ul#sortable #sort_17 span, ul#sortable #sort_18 span, ul#sortable #sort_19 span, ul#sortable #sort_20 span{background: url(' . $icon . 'custom-black.png);}
 		');
 
 		// If there is no value we'll set the default layout
@@ -153,7 +171,7 @@ class JFormFieldSorting extends JFormField
 
 		foreach ($items as $item)
 		{
-			$input .= '<li class="sort" id="' . $item . '"><span></span>' . $options[$item] . '</li>';
+			$input .= '<li class="sort" id="' . $item . '">' . $options[$item] . '</li>';
 		}
 
 		$input .= '</ul>
