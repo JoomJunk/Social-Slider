@@ -15,6 +15,9 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+Version 2.0.2
+# Fixed dark sprite icon order
+
 Version 2.0.1
 # Fixed CSS spirte background positions
 
