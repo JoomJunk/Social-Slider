@@ -20,6 +20,8 @@ $ -> Language fix or change
 # Fixed muddled icons on sorting feature
 $ Updated French language pack (thanks MATsxm)
 ^ Update jQuery.sortable to v0.9.13
+^ Improve transition performance by using translateX
++ Added Spanish language pack (thanks César Fernando)
 
 Version 2.0.2
 # Fixed dark sprite icon order
