@@ -63,18 +63,16 @@ $css = '.jj_sl_navigation li a {
 		
 if ($params->get('disable') == 1)
 {
-	$mobile = '@media screen and (max-width: ' . $params->get('mobile_width', '480px') . '){
-					.jj_sl_navigation { display: none; }
-				}';
-	$doc->addStyleDeclaration($mobile);
+	$css .= '@media screen and (max-width: ' . $params->get('mobile_width', '480px') . '){
+				.jj_sl_navigation { display: none; }
+			}';
 }
 
 if ($params->get('disable') == 2)
 {
-	$tablet = '@media screen and (max-width: ' . $params->get('tablet_width', '768px') . '){
-					.jj_sl_navigation { display: none; }
-				}';
-	$doc->addStyleDeclaration($tablet);
+	$css .= '@media screen and (max-width: ' . $params->get('tablet_width', '768px') . '){
+				.jj_sl_navigation { display: none; }
+			}';
 }
 
 if ($position == 'left')

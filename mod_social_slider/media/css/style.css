@@ -1,5 +1,5 @@
 /**
-* @package		JJ Social Slider
+* @package		JJ_Social_Slider
 * @author		JoomJunk
 * @copyright	Copyright (C) 2011 - 2016 JoomJunk. All Rights Reserved
 * @license		http://www.gnu.org/licenses/gpl-3.0.html
@@ -22,25 +22,36 @@
 }
 
 /* Left */
-.jj_sl_navigation.left { 
+.jj_sl_navigation.left {
 	left: -140px;
 }
-.jj_sl_navigation.left li { 
+.jj_sl_navigation.left li {
 	left: 0;
 	position: relative;
-	-webkit-transition: left 0.3s;
-	-moz-transition: left 0.3s;
-	transition: left 0.3s;
+	
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	transform: translateX(0);
+	
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
 }
 .jj_sl_navigation.left li:hover {
-	left: 140px;
+	-webkit-transform: translateX(140px);
+	-moz-transform: translateX(140px);
+	transform: translateX(140px);
+
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
 }
 .jj_sl_navigation.left li a {
 	padding: 11px 0px 11px 10px;
 	margin-left: -2px;
 }
 .jj_sl_navigation.left .jj_sprite,
-.jj_sl_navigation.left  .jj_sprite_custom  {
+.jj_sl_navigation.left .jj_sprite_custom {
 	float: right;
 	right: 3px;
 }
@@ -52,19 +63,30 @@
 .jj_sl_navigation.right li {
 	right: 0;
 	position: relative;
-	-webkit-transition: right 0.3s;
-	-moz-transition: right 0.3s;
-	transition: right 0.3s;
+
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	transform: translateX(0);
+
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
 }
 .jj_sl_navigation.right li:hover {
-	right: 140px;
+	-webkit-transform: translateX(-140px);
+	-moz-transform: translateX(-140px);
+	transform: translateX(-140px);
+
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
 }
 .jj_sl_navigation.right li a {
 	padding: 11px 10px 11px 0px;
 	margin-left: 0;
 }
 .jj_sl_navigation.right .jj_sprite,
-.jj_sl_navigation.right  .jj_sprite_custom  {
+.jj_sl_navigation.right .jj_sprite_custom  {
 	float: left;
 	left: 3px;
 }
@@ -79,6 +101,7 @@
 	font-weight: bold;
 	text-transform: inherit;
 	box-sizing: content-box;
+
 	-webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;	
@@ -113,7 +136,7 @@
     transition: all 0.3s ease;
 }
 .jj_sl_navigation .jj_sprite,
-.jj_sl_navigation .jj_sprite_custom  {
+.jj_sl_navigation .jj_sprite_custom {
 	display: block;
 	width: 32px;
 	height: 32px;
