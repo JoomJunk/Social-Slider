@@ -135,20 +135,19 @@ class JFormFieldSorting extends JFormField
 			}		
 			ul#sortable #sort_1.sort::before { background-position: 0 0; }
 			ul#sortable #sort_2.sort::before { background-position: 0 -96px; }
-			ul#sortable #sort_3.sort::before { background-position: -96px 0; }
-			ul#sortable #sort_4.sort::before { background-position: -64px -32px; }
+			ul#sortable #sort_3.sort::before { background-position: 0 -32px; }
+			ul#sortable #sort_4.sort::before { background-position: 0 -64px; }
 			ul#sortable #sort_5.sort::before { background-position: -64px -96px; }
-			ul#sortable #sort_6.sort::before { background-position: -32px -32px; }
-			ul#sortable #sort_7.sort::before { background-position: -64px -64px; }
-			ul#sortable #sort_8.sort::before { background-position: 0 -32px; }
-			ul#sortable #sort_9.sort::before { background-position: -96px -32px; }
-			ul#sortable #sort_10.sort::before { background-position: -32px -64px; }
+			ul#sortable #sort_6.sort::before { background-position: -64px -32px; }
+			ul#sortable #sort_7.sort::before { background-position: -96px -32px; }
+			ul#sortable #sort_8.sort::before { background-position: -32px -32px; }
+			ul#sortable #sort_9.sort::before { background-position: -32px -64px; }
+			ul#sortable #sort_10.sort::before { background-position: -96px 0; }
 			ul#sortable #sort_11.sort::before { background-position: -96px -64px; }
 			ul#sortable #sort_12.sort::before { background-position: -64px 0; }
 			ul#sortable #sort_13.sort::before { background-position: -32px 0; }
-			ul#sortable #sort_14.sort::before { background-position: 0 -64px; }
-			ul#sortable #sort_15.sort::before { background-position: -32px -96px; }		
-			ul#sortable #sort_15.sort::before,
+			ul#sortable #sort_14.sort::before { background-position: -64px -64px; }
+			ul#sortable #sort_15.sort::before { background-position: -32px -96px; }
 			ul#sortable #sort_16.sort::before,
 			ul#sortable #sort_17.sort::before,
 			ul#sortable #sort_18.sort::before,

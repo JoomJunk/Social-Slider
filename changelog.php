@@ -17,7 +17,9 @@ $ -> Language fix or change
 
 ## WIP
 # Fixed default Twitter hex colour
+# Fixed muddled icons on sorting feature
 $ Updated French language pack (thanks MATsxm)
+^ Update jQuery.sortable to v0.9.13
 
 Version 2.0.2
 # Fixed dark sprite icon order
