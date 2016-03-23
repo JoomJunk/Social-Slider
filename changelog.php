@@ -15,7 +15,7 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
-## WIP
+Version 2.1.0
 # Fixed default Twitter hex colour
 # Fixed muddled icons on sorting feature
 $ Updated French language pack (thanks MATsxm)
