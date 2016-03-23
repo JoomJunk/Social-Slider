@@ -15,6 +15,10 @@ $ -> Language fix or change
 - -> Removed
 ! -> Note
 
+## WIP
+# Fixed default Twitter hex colour
+$ Updated French language pack (thanks MATsxm)
+
 Version 2.0.2
 # Fixed dark sprite icon order
 
