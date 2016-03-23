@@ -33,7 +33,6 @@ class JFormFieldSep extends JFormField
         $css   = (string)$this->element['class'];
 
         return '<div class="jj-sep ' . $css . '">' . $label . '</div>';
-
 	}
 
 	/**

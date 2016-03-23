@@ -26,12 +26,10 @@ class JFormFieldPro extends JFormField
 	 */
 	protected function getLabel()
 	{
-	
 		$app = JFactory::getApplication();
 		$msg = '<h3>Love JJ Social Slider? Take a look at the <a href="http://joomjunk.co.uk/products/social-slider-pro.html" target="_blank">Pro version</a> which is packed with many more features.</h3>';
 		
-        return $app->enqueueMessage($msg, 'message');	
-
+        return $app->enqueueMessage($msg, 'message');
 	}
 
 	/**
