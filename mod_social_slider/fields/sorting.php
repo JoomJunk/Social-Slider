@@ -8,6 +8,11 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
+
 /**
  * Form Field class for JoomJunk.
  * Provides a jQuery UI drag and drop form field for the social slider fields
@@ -15,7 +20,7 @@ defined('_JEXEC') or die('Restricted access');
  * @package     JJ_Social_Slider
  * @since       1.4.0
  */
-class JFormFieldSorting extends JFormField
+class JFormFieldSorting extends Joomla\CMS\Form\FormField
 {
 	/**
 	 * The form field type.
@@ -34,35 +39,35 @@ class JFormFieldSorting extends JFormField
 	 */
 	protected function getInput()
 	{
-		$options = array(
-			'sort_1' => JText::_('COM_MODULES_FACEBOOK_FIELDSET_LABEL'),
-			'sort_2' => JText::_('COM_MODULES_TWITTER_FIELDSET_LABEL'),
-			'sort_3' => JText::_('COM_MODULES_GOOGLES_FIELDSET_LABEL'),
-			'sort_4' => JText::_('COM_MODULES_MYSPACE_FIELDSET_LABEL'),
-			'sort_5' => JText::_('COM_MODULES_YOUTUBE_FIELDSET_LABEL'),
-			'sort_6' => JText::_('COM_MODULES_LINKEDIN_FIELDSET_LABEL'),
-			'sort_7' => JText::_('COM_MODULES_STEAM_FIELDSET_LABEL'),
-			'sort_8' => JText::_('COM_MODULES_LASTFM_FIELDSET_LABEL'),
-			'sort_9' => JText::_('COM_MODULES_PINTEREST_FIELDSET_LABEL'),
-			'sort_10' => JText::_('COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL'),
-			'sort_11' => JText::_('COM_MODULES_TUMBLR_FIELDSET_LABEL'),
-			'sort_12' => JText::_('COM_MODULES_GITHUB_FIELDSET_LABEL'),
-			'sort_13' => JText::_('COM_MODULES_FLICKR_FIELDSET_LABEL'),
-			'sort_14' => JText::_('COM_MODULES_RSS_FIELDSET_LABEL'),
-			'sort_15' => JText::_('COM_MODULES_VIMEO_FIELDSET_LABEL'),
-			'sort_16' => JText::_('COM_MODULES_CUSTOM1_FIELDSET_LABEL'),
-			'sort_17' => JText::_('COM_MODULES_CUSTOM2_FIELDSET_LABEL'),
-			'sort_18' => JText::_('COM_MODULES_CUSTOM3_FIELDSET_LABEL'),
-			'sort_19' => JText::_('COM_MODULES_CUSTOM4_FIELDSET_LABEL'),
-			'sort_20' => JText::_('COM_MODULES_CUSTOM5_FIELDSET_LABEL')
-		);
-		$doc = JFactory::getDocument();
+		$options = [
+			'sort_1' => Text::_('COM_MODULES_FACEBOOK_FIELDSET_LABEL'),
+			'sort_2' => Text::_('COM_MODULES_TWITTER_FIELDSET_LABEL'),
+			'sort_3' => Text::_('COM_MODULES_GOOGLES_FIELDSET_LABEL'),
+			'sort_4' => Text::_('COM_MODULES_MYSPACE_FIELDSET_LABEL'),
+			'sort_5' => Text::_('COM_MODULES_YOUTUBE_FIELDSET_LABEL'),
+			'sort_6' => Text::_('COM_MODULES_LINKEDIN_FIELDSET_LABEL'),
+			'sort_7' => Text::_('COM_MODULES_STEAM_FIELDSET_LABEL'),
+			'sort_8' => Text::_('COM_MODULES_LASTFM_FIELDSET_LABEL'),
+			'sort_9' => Text::_('COM_MODULES_PINTEREST_FIELDSET_LABEL'),
+			'sort_10' => Text::_('COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL'),
+			'sort_11' => Text::_('COM_MODULES_TUMBLR_FIELDSET_LABEL'),
+			'sort_12' => Text::_('COM_MODULES_GITHUB_FIELDSET_LABEL'),
+			'sort_13' => Text::_('COM_MODULES_FLICKR_FIELDSET_LABEL'),
+			'sort_14' => Text::_('COM_MODULES_RSS_FIELDSET_LABEL'),
+			'sort_15' => Text::_('COM_MODULES_VIMEO_FIELDSET_LABEL'),
+			'sort_16' => Text::_('COM_MODULES_CUSTOM1_FIELDSET_LABEL'),
+			'sort_17' => Text::_('COM_MODULES_CUSTOM2_FIELDSET_LABEL'),
+			'sort_18' => Text::_('COM_MODULES_CUSTOM3_FIELDSET_LABEL'),
+			'sort_19' => Text::_('COM_MODULES_CUSTOM4_FIELDSET_LABEL'),
+			'sort_20' => Text::_('COM_MODULES_CUSTOM5_FIELDSET_LABEL')
+		];
+		$doc = Factory::getDocument();
 
 		// Inject jQuery onto the page
-		JHtml::_('jquery.framework');
+		HTMLHelper::_('jquery.framework');
 
 		// Next insert the jQuery plugin
-		JHtml::_('script', 'mod_social_slider/jquery-sortable.js', false, true);
+		HTMLHelper::_('script', 'mod_social_slider/jquery-sortable.js', ['version' => 'auto', 'relative' => true]);
 
 		// Now initialize the plugin
 		$doc->addScriptDeclaration('
@@ -81,7 +86,7 @@ class JFormFieldSorting extends JFormField
 		');
 
 		// Add in relevant styles
-		$icon = JUri::root() . 'media/mod_social_slider/icons/';
+		$icon = Uri::root() . 'media/mod_social_slider/icons/';
 		$doc->addStyleDeclaration('
 			body.dragging, body.dragging * {
 			  cursor: move !important;

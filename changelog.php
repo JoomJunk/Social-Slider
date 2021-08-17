@@ -16,6 +16,9 @@ $ -> Language fix or change
 ! -> Note
 
 Version 2.1.0
++ Add support for Joomla 4
+
+Version 2.1.0
 # Fixed default Twitter hex colour
 # Fixed muddled icons on sorting feature
 $ Updated French language pack (thanks MATsxm)

@@ -8,13 +8,15 @@
 
 defined('JPATH_PLATFORM') or die;
 
+use Joomla\CMS\Factory;
+
 /**
  * Notification for Pro version.
  *
  * @package     JJ_Social_Slider
  * @since       1.5.6
  */
-class JFormFieldPro extends JFormField
+class JFormFieldPro extends Joomla\CMS\Form\FormField
 {
 	/**
 	 * @var string
@@ -26,10 +28,9 @@ class JFormFieldPro extends JFormField
 	 */
 	protected function getLabel()
 	{
-		$app = JFactory::getApplication();
-		$msg = '<h3>Love JJ Social Slider? Take a look at the <a href="http://joomjunk.co.uk/products/social-slider-pro.html" target="_blank">Pro version</a> which is packed with many more features.</h3>';
+		$msg = '<h3>Love JJ Social Slider? Take a look at the <a href="https://joomjunk.co.uk/products/social-slider-pro.html" target="_blank" rel="noopener">Pro version</a> which is packed with many more features.</h3>';
 		
-        return $app->enqueueMessage($msg, 'message');
+        return Factory::getApplication()->enqueueMessage($msg, 'message');
 	}
 
 	/**

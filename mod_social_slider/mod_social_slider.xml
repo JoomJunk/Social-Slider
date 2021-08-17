@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.4" method="upgrade">
+<extension type="module" version="3.4" method="upgrade" client="site">
 	<name>JJ Social Slider</name> 
 	<author>JoomJunk</author> 
 	<creationDate>7th Dec 2012</creationDate> 
-	<copyright>Copyright (C) 2016 JoomJunk</copyright> 
-	<license>http://www.gnu.org/licenses/gpl-3.0.html</license> 
+	<copyright>Copyright (C) 2021 JoomJunk</copyright> 
+	<license>https://gnu.org/licenses/gpl-3.0.html</license> 
 	<authorEmail>admin@joomjunk.co.uk</authorEmail> 
-	<authorUrl>http://www.joomjunk.co.uk</authorUrl> 
+	<authorUrl>https://joomjunk.co.uk</authorUrl> 
 	<version>2.1.0</version>
 	<description>JJ_SOCIAL_SLIDER_DESC</description>
 	
@@ -18,7 +18,7 @@
 	</files>
 	
 	<updateservers>
-		<server type="extension" name="JJ Social Slider" priority="1">http://www.joomjunk.co.uk/updates/social_slider_update.xml</server>
+		<server type="extension" name="JJ Social Slider" priority="1">https://joomjunk.co.uk/updates/social_slider_update.xml</server>
 	</updateservers>
 
 	<scriptfile>script.php</scriptfile>
@@ -54,7 +54,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="facebook_link" default="http://facebook.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_FACEBOOK_LINK" description="JJ_SOCIAL_SLIDER_FACEBOOK_LINK_DESC" />
+				<field name="facebook_link" default="https://facebook.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_FACEBOOK_LINK" description="JJ_SOCIAL_SLIDER_FACEBOOK_LINK_DESC" />
 
 				<field name="sep2" type="sep" label="COM_MODULES_TWITTER_FIELDSET_LABEL" />
 				
@@ -62,7 +62,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="twitter_link" default="http://twitter.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TWITTER_LINK" description="JJ_SOCIAL_SLIDER_TWITTER_LINK_DESC" />
+				<field name="twitter_link" default="https://twitter.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TWITTER_LINK" description="JJ_SOCIAL_SLIDER_TWITTER_LINK_DESC" />
 
 				<field name="sep3" type="sep" label="COM_MODULES_GOOGLES_FIELDSET_LABEL" />
 				
@@ -70,7 +70,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="google_link" default="http://plus.google.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_GOOGLE_LINK" description="JJ_SOCIAL_SLIDER_GOOGLE_LINK_DESC" />
+				<field name="google_link" default="https://plus.google.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_GOOGLE_LINK" description="JJ_SOCIAL_SLIDER_GOOGLE_LINK_DESC" />
 
 				<field name="sep4" type="sep" label="COM_MODULES_MYSPACE_FIELDSET_LABEL" />
 				
@@ -78,7 +78,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="myspace_link" default="http://myspace.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_MYSPACE_LINK" description="JJ_SOCIAL_SLIDER_MYSPACE_LINK_DESC" />
+				<field name="myspace_link" default="https://myspace.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_MYSPACE_LINK" description="JJ_SOCIAL_SLIDER_MYSPACE_LINK_DESC" />
 
 				<field name="sep5" type="sep" label="COM_MODULES_YOUTUBE_FIELDSET_LABEL" />
 				
@@ -86,7 +86,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="youtube_link" default="http://youtube.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_YOUTUBE_LINK" description="JJ_SOCIAL_SLIDER_YOUTUBE_LINK_DESC" />
+				<field name="youtube_link" default="https://youtube.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_YOUTUBE_LINK" description="JJ_SOCIAL_SLIDER_YOUTUBE_LINK_DESC" />
 
 				<field name="sep6" type="sep" label="COM_MODULES_LINKEDIN_FIELDSET_LABEL" />
 				
@@ -94,7 +94,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="linkedin_link" default="http://linkedin.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_LINKEDIN_LINK" description="JJ_SOCIAL_SLIDER_LINKEDIN_LINK_DESC" />
+				<field name="linkedin_link" default="https://linkedin.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_LINKEDIN_LINK" description="JJ_SOCIAL_SLIDER_LINKEDIN_LINK_DESC" />
 
 				<field name="sep7" type="sep" label="COM_MODULES_STEAM_FIELDSET_LABEL" />
 				
@@ -102,7 +102,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="steam_link" default="http://steampowered.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_STEAM_LINK" description="JJ_SOCIAL_SLIDER_STEAM_LINK_DESC" />
+				<field name="steam_link" default="https://steampowered.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_STEAM_LINK" description="JJ_SOCIAL_SLIDER_STEAM_LINK_DESC" />
 
 				<field name="sep8" type="sep" label="COM_MODULES_LASTFM_FIELDSET_LABEL" />
 				
@@ -110,7 +110,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="lastfm_link" default="http://last.fm" type="text" size="50" label="JJ_SOCIAL_SLIDER_LASTFM_LINK" description="JJ_SOCIAL_SLIDER_LASTFM_LINK_DESC" />
+				<field name="lastfm_link" default="https://last.fm" type="text" size="50" label="JJ_SOCIAL_SLIDER_LASTFM_LINK" description="JJ_SOCIAL_SLIDER_LASTFM_LINK_DESC" />
 
 				<field name="sep9" type="sep" label="COM_MODULES_PINTEREST_FIELDSET_LABEL" />
 				
@@ -118,7 +118,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="pinterest_link" default="http://pinterest.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_PINTEREST_LINK" description="JJ_SOCIAL_SLIDER_PINTEREST_LINK_DESC" />
+				<field name="pinterest_link" default="https://pinterest.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_PINTEREST_LINK" description="JJ_SOCIAL_SLIDER_PINTEREST_LINK_DESC" />
 	
 				<field name="sep10" type="sep" label="COM_MODULES_SOUNDCLOUD_FIELDSET_LABEL" />
 				
@@ -126,7 +126,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="soundcloud_link" default="http://soundcloud.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_SOUNDCLOUD_LINK" description="JJ_SOCIAL_SLIDER_SOUNDCLOUD_LINK_DESC" />
+				<field name="soundcloud_link" default="https://soundcloud.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_SOUNDCLOUD_LINK" description="JJ_SOCIAL_SLIDER_SOUNDCLOUD_LINK_DESC" />
 	
 				<field name="sep11" type="sep" label="COM_MODULES_TUMBLR_FIELDSET_LABEL" />
 				
@@ -134,7 +134,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="tumblr_link" default="http://tumblr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TUMBLR_LINK" description="JJ_SOCIAL_SLIDER_TUMBLR_LINK_DESC" />
+				<field name="tumblr_link" default="https://tumblr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_TUMBLR_LINK" description="JJ_SOCIAL_SLIDER_TUMBLR_LINK_DESC" />
 
 				<field name="sep12" type="sep" label="COM_MODULES_GITHUB_FIELDSET_LABEL" />
 				
@@ -142,7 +142,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="github_link" default="http://github.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_GITHUB_LINK" description="JJ_SOCIAL_SLIDER_GITHUB_LINK_DESC" />
+				<field name="github_link" default="https://github.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_GITHUB_LINK" description="JJ_SOCIAL_SLIDER_GITHUB_LINK_DESC" />
 	
 				<field name="sep13" type="sep" label="COM_MODULES_FLICKR_FIELDSET_LABEL" />
 				
@@ -150,7 +150,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="flickr_link" default="http://flickr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_FLICKR_LINK" description="JJ_SOCIAL_SLIDER_FLICKR_LINK_DESC" />
+				<field name="flickr_link" default="https://flickr.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_FLICKR_LINK" description="JJ_SOCIAL_SLIDER_FLICKR_LINK_DESC" />
 
 				<field name="sep14" type="sep" label="COM_MODULES_RSS_FIELDSET_LABEL" />
 				
@@ -158,7 +158,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="rss_link" default="http://link-to-rss-feed.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_RSS_LINK" description="JJ_SOCIAL_SLIDER_RSS_LINK_DESC" />
+				<field name="rss_link" default="https://link-to-rss-feed.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_RSS_LINK" description="JJ_SOCIAL_SLIDER_RSS_LINK_DESC" />
 
 				<field name="sep15" type="sep" label="COM_MODULES_VIMEO_FIELDSET_LABEL" />
 				
@@ -166,7 +166,7 @@
 					<option value="0">JJ_OFF</option>
 					<option value="1">JJ_ON</option>
 				</field>
-				<field name="vimeo_link" default="http://vimeo.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_VIMEO_LINK" description="JJ_SOCIAL_SLIDER_VIMEO_LINK_DESC" />
+				<field name="vimeo_link" default="https://vimeo.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_VIMEO_LINK" description="JJ_SOCIAL_SLIDER_VIMEO_LINK_DESC" />
 				
 				<field name="pro" type="pro" label="" />
 			</fieldset>
@@ -181,7 +181,7 @@
 				</field>
 				<field name="custom1_text" default="Follow via Custom 1" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM1_LINK_DESC" />
 				<field name="custom1_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM1_COLOUR_DESC" />
-				<field name="custom1_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM1_LINK_DESC" />
+				<field name="custom1_link" default="https://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM1_LINK_DESC" />
 				<field name="custom1_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM1_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM1_IMAGE_DESC" />
 
 				<field name="sep17" type="sep" label="COM_MODULES_CUSTOM2_FIELDSET_LABEL" />
@@ -192,7 +192,7 @@
 				</field>
 				<field name="custom2_text" default="Follow via Custom 2" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM2_LINK_DESC" />
 				<field name="custom2_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM2_COLOUR_DESC" />
-				<field name="custom2_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM2_LINK_DESC" />
+				<field name="custom2_link" default="https://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM2_LINK_DESC" />
 				<field name="custom2_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM2_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM2_IMAGE_DESC" />
 
 				<field name="sep18" type="sep" label="COM_MODULES_CUSTOM3_FIELDSET_LABEL" />
@@ -203,7 +203,7 @@
 				</field>
 				<field name="custom3_text" default="Follow via Custom 3" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM3_LINK_DESC" />
 				<field name="custom3_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM3_COLOUR_DESC" />
-				<field name="custom3_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM3_LINK_DESC" />
+				<field name="custom3_link" default="https://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM3_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM3_LINK_DESC" />
 				<field name="custom3_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE_DESC" />
 
 				<field name="sep19" type="sep" label="COM_MODULES_CUSTOM4_FIELDSET_LABEL" />
@@ -214,7 +214,7 @@
 				</field>
 				<field name="custom4_text" default="Follow via Custom 4" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM4_LINK_DESC" />
 				<field name="custom4_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM4_COLOUR_DESC" />
-				<field name="custom4_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM4_LINK_DESC" />
+				<field name="custom4_link" default="https://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM4_LINK_DESC" />
 				<field name="custom4_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM4_IMAGE_DESC" />
 
 				<field name="sep20" type="sep" label="COM_MODULES_CUSTOM5_FIELDSET_LABEL" />
@@ -225,7 +225,7 @@
 				</field>
 				<field name="custom5_text" default="Follow via Custom 5" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_TEXT" description="JJ_SOCIAL_SLIDER_CUSTOM5_LINK_DESC" />
 				<field name="custom5_colour" default="#000000" type="color" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_COLOUR" description="JJ_SOCIAL_SLIDER_CUSTOM5_COLOUR_DESC" />
-				<field name="custom5_link" default="http://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM5_LINK_DESC" />
+				<field name="custom5_link" default="https://example.com" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_LINK" description="JJ_SOCIAL_SLIDER_CUSTOM5_LINK_DESC" />
 				<field name="custom5_image" default="icon.png" type="text" size="50" label="JJ_SOCIAL_SLIDER_CUSTOM5_IMAGE" description="JJ_SOCIAL_SLIDER_CUSTOM5_IMAGE_DESC" />
 			</fieldset>	
 			

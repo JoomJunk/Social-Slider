@@ -8,13 +8,16 @@
 
 defined('JPATH_PLATFORM') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
+
 /**
  * Form Field separator for JoomJunk.
  *
  * @package     JJ_Social_Slider
  * @since       1.4.0
  */
-class JFormFieldSep extends JFormField
+class JFormFieldSep extends Joomla\CMS\Form\FormField
 {
 	/**
 	 * @var string
@@ -26,10 +29,9 @@ class JFormFieldSep extends JFormField
 	 */
 	protected function getLabel()
 	{
-        $doc = JFactory::getDocument();
-        $doc->addStyleDeclaration(".jj-sep { border-bottom:1px solid #eee;font-size:16px;color:#BD362F;margin-top:15px;padding:2px 0;width:100% }");
+        Factory::getDocument()->addStyleDeclaration(".jj-sep { border-bottom:1px solid #eee;font-size:1rem;color:#BD362F;margin-top:15px;padding:2px 0;width:100% }");
 
-        $label = JText::_((string)$this->element['label']);
+        $label = Text::_((string)$this->element['label']);
         $css   = (string)$this->element['class'];
 
         return '<div class="jj-sep ' . $css . '">' . $label . '</div>';

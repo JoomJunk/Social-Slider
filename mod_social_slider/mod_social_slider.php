@@ -9,11 +9,13 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
-if ($params->get('position', 'left') == 'rtl')
-{
-	$RTL = JFactory::getLanguage()->isRTL();
+use Joomla\CMS\Factory;
+use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\Uri\Uri;
 
-	if ($RTL)
+if ($params->get('position', 'left') === 'rtl')
+{
+	if (Factory::getLanguage()->isRTL())
 	{
 		$position = 'right';
 	}
@@ -27,9 +29,7 @@ else
 	$position = $params->get('position', 'left');
 }
 
-$doc = JFactory::getDocument();
-
-$slides = array(
+$slides = [
 	'sort_1' => 'facebook',
 	'sort_2' => 'twitter',
 	'sort_3' => 'google',
@@ -50,7 +50,7 @@ $slides = array(
 	'sort_18' => 'custom3',
 	'sort_19' => 'custom4',
 	'sort_20' => 'custom5'
-);
+];
 
 $css = '.jj_sl_navigation li a {
 			background-color:' . $params->get('slide_colour') . ';
@@ -58,7 +58,7 @@ $css = '.jj_sl_navigation li a {
 			color:' . $params->get('text_colour') . ' !important;
 		}
 		.jj_sl_navigation .jj_sprite {
-			background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/sprite-' . $params->get('icon_colour') . '.png);
+			background-image: url(' . Uri::root() . 'media/mod_social_slider/icons/sprite-' . $params->get('icon_colour') . '.png);
 		}';
 		
 if ($params->get('disable') == 1)
@@ -75,13 +75,13 @@ if ($params->get('disable') == 2)
 			}';
 }
 
-if ($position == 'left')
+if ($position === 'left')
 {
 	$css .= '.jj_sl_navigation { '
 				. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;
 			}';
 }
-else if ($position == 'right')
+else if ($position === 'right')
 {
 	$css .= '.jj_sl_navigation { '
 				. $params->get('top_bottom', 'top') . ':' . $params->get('top') . 'px;
@@ -110,11 +110,11 @@ foreach ($slides as $slide => $social)
 	{
 		$css .= '
 				.jj_sl_navigation .jj_sprite_custom.jj_' . $social . ' {
-					background-image: url(' . JUri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
+					background-image: url(' . Uri::root() . 'media/mod_social_slider/icons/' . $params->get( $social . '_image') . ');
 				}';
 	}
 }
 		
-$doc->addStyleDeclaration($css);
+Factory::getDocument()->addStyleDeclaration($css);
 
-require JModuleHelper::getLayoutPath('mod_social_slider');
+require ModuleHelper::getLayoutPath('mod_social_slider');

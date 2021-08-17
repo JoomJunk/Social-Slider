@@ -5,8 +5,14 @@
  * @copyright  Copyright (C) 2011 - 2016 JoomJunk. All Rights Reserved
  * @license    GPL v3.0 or later http://www.gnu.org/licenses/gpl-3.0.html
  */
+
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+
+use Joomla\CMS\Factory;
+use Joomla\CMS\Filesystem\File;
+use Joomla\CMS\Filesystem\Folder;
+use Joomla\CMS\Uri\Uri;
 
 /**
  * Social Slider installation script class.
@@ -46,21 +52,20 @@ class Mod_Social_SliderInstallerScript
 	 */
 	public function preflight($type, $parent)
 	{
-		$version = new JVersion;
-		if(!$version->isCompatible('3.2.0'))
-		{
-			JFactory::getApplication()->enqueueMessage(JText::_('JJ_SOCIAL_SLIDER_JOOMLA_VERSION_OUTDATED'));
-			
-			return false;
-		}
-
 		// Module manifest file version
-		$this->release = $parent->get("manifest")->version;
+		if (version_compare(JVERSION, '3.999.999', 'gt'))
+		{
+			$this->release = $parent->manifest->version;
+		}
+		else
+		{
+			$this->release = $parent->get('manifest')->version;
+		}
 
 		// Abort if the module being installed is not newer than the currently installed version
 		if (strtolower($type) == 'update')
 		{
-			$manifest = $this->getItemArray('manifest_cache', '#__extensions', 'element', JFactory::getDbo()->quote($this->extension));
+			$manifest = $this->getItemArray('manifest_cache', '#__extensions', 'element', Factory::getDbo()->quote($this->extension));
 			$oldRelease = $manifest['version'];
 
 			if (version_compare($oldRelease, $this->release, '<'))
@@ -93,21 +98,21 @@ class Mod_Social_SliderInstallerScript
 	 */
 	protected function getInstances($isModule)
 	{
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		$query = $db->getQuery(true);
 
 		// Select the item(s) and retrieve the id
-		$query->select($db->quoteName('id'));
+		$query->select($db->qn('id'));
 
 		if ($isModule)
 		{
-			$query->from($db->quoteName('#__modules'))
-				->where($db->quoteName('module') . ' = ' . $db->Quote($this->extension));
+			$query->from($db->qn('#__modules'))
+				->where($db->qn('module') . ' = ' . $db->q($this->extension));
 		}
 		else
 		{
-			$query->from($db->quoteName('#__extensions'))
-				->where($db->quoteName('element') . ' = ' . $db->Quote($this->extension));
+			$query->from($db->qn('#__extensions'))
+				->where($db->qn('element') . ' = ' . $db->q($this->extension));
 		}
 
 		// Set the query and obtain an array of id's
@@ -165,7 +170,7 @@ class Mod_Social_SliderInstallerScript
 		{
 			foreach ($param_array as $name => $value)
 			{
-				if ($type == 'edit')
+				if ($type === 'edit')
 				{
 					// Add or edit the new variable(s) to the existing params
 					if (is_array($value))
@@ -178,7 +183,7 @@ class Mod_Social_SliderInstallerScript
 						$params[(string) $name] = (string) $value;
 					}
 				}
-				elseif ($type == 'remove')
+				elseif ($type === 'remove')
 				{
 					// Unset the parameter from the array
 					unset($params[(string) $name]);
@@ -189,10 +194,10 @@ class Mod_Social_SliderInstallerScript
 		// Store the combined new and existing values back as a JSON string
 		$paramsString = json_encode($params);
 
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		$query = $db->getQuery(true);
-		$query->update($db->quoteName($this->paramTable))
-			->set('params = ' . $db->quote($paramsString))
+		$query->update($db->qn($this->paramTable))
+			->set('params = ' . $db->q($paramsString))
 			->where('id = ' . $id);
 
 		// Update table
@@ -218,13 +223,13 @@ class Mod_Social_SliderInstallerScript
 	protected function getItemArray($element, $table, $column, $identifier)
 	{
 		// Get the DB and query objects
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		$query = $db->getQuery(true);
 
 		// Build the query
-		$query->select($db->quoteName($element))
-			->from($db->quoteName($table))
-			->where($db->quoteName($column) . ' = ' . $identifier);
+		$query->select($db->qn($element))
+			->from($db->qn($table))
+			->where($db->qn($column) . ' = ' . $identifier);
 		$db->setQuery($query);
 
 		// Load the single cell and json_decode data
@@ -254,7 +259,7 @@ class Mod_Social_SliderInstallerScript
 			$module = (int) $module;
 
 			// Create array of params to change
-			$colours = array();
+			$colours = [];
 			$colours['slide_colour'] = '#' . $this->getParam('slide_colour', $module);
 
 			// Set the param values
@@ -275,23 +280,19 @@ class Mod_Social_SliderInstallerScript
 	 */
 	protected function update140()
 	{
-		// Import dependencies
-		jimport('joomla.filesystem.folder');
-		jimport('joomla.filesystem.file');
-
 		// Move the assets and add index.html files to new directory
-		if (JFolder::create('media/' . $this->extension)
-			&& JFolder::move(JUri::root() . 'modules/'. $this->extension . '/assets/icons', JUri::root() . 'media/'. $this->extension)
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/index.html', JUri::root() . 'media/'. $this->extension . '/index.html')
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/jquery-sortable-min.js', JUri::root() . 'media/'. $this->extension . '/js/jquery-sortable-min.js')
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/jquery-sortable.js', JUri::root() . 'media/'. $this->extension . '/js/jquery-sortable.js')
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/jquery.js', JUri::root() . 'media/'. $this->extension . '/js/jquery.js')
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/style.css', JUri::root() . 'media/'. $this->extension . '/css/style.css')
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/index.html', JUri::root() . 'media/'. $this->extension . '/js/index.html')
-			&& JFile::move(JUri::root() . 'modules/'. $this->extension . '/assets/index.html', JUri::root() . 'media/'. $this->extension . '/css/index.html'))
+		if (Folder::create('media/' . $this->extension)
+			&& Folder::move(Uri::root() . 'modules/'. $this->extension . '/assets/icons', Uri::root() . 'media/'. $this->extension)
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/index.html', Uri::root() . 'media/'. $this->extension . '/index.html')
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/jquery-sortable-min.js', Uri::root() . 'media/'. $this->extension . '/js/jquery-sortable-min.js')
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/jquery-sortable.js', Uri::root() . 'media/'. $this->extension . '/js/jquery-sortable.js')
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/jquery.js', Uri::root() . 'media/'. $this->extension . '/js/jquery.js')
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/style.css', Uri::root() . 'media/'. $this->extension . '/css/style.css')
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/index.html', Uri::root() . 'media/'. $this->extension . '/js/index.html')
+			&& File::move(Uri::root() . 'modules/'. $this->extension . '/assets/index.html', Uri::root() . 'media/'. $this->extension . '/css/index.html'))
 		{
 			// We can now delete the folder
-			JFolder::delete(JPATH_ROOT . '/modules/'. $this->extension . '/assets');
+			Folder::delete(JPATH_ROOT . '/modules/'. $this->extension . '/assets');
 		}
 	}
 }

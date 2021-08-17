@@ -9,7 +9,10 @@
 // No direct access
 defined('_JEXEC')  or die('Restricted access');
 
-JHtml::_('stylesheet', 'mod_social_slider/style.css', array(), true);
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+
+HTMLHelper::_('stylesheet', 'mod_social_slider/style.css', ['version' => 'auto', 'relative' => true]);
 
 $target = '';
 $nofollow = '';
@@ -40,7 +43,7 @@ foreach ($order as $item)
 		{
 			echo '<li class="jj_sl_' . $key . '">';
 			echo '<a href="' . $params->get($key . '_link') . '"' . $target . $nofollow . '>';
-			echo '<span class="jj_social_text">' . JText::_('JJ_SOCIAL_SLIDER_VIA_' . strtoupper($key) . '') . '</span>';
+			echo '<span class="jj_social_text">' . Text::_('JJ_SOCIAL_SLIDER_VIA_' . strtoupper($key) . '') . '</span>';
 			echo '<span class="jj_sprite jj_' . $key . '"></span>';
 			echo '</a>';
 			echo '</li>';
@@ -49,7 +52,7 @@ foreach ($order as $item)
 		{
 			echo '<li class="jj_sl_' . $key . '">';
 			echo '<a href="' . $params->get($key . '_link') . '"' . $target .  $nofollow . '>';
-			echo '<span class="jj_social_text">' . JText::_($params->get($key . '_text')) . '</span>';
+			echo '<span class="jj_social_text">' . Text::_($params->get($key . '_text')) . '</span>';
 			echo '<span class="jj_sprite_custom jj_' . $key . '"></span>';
 			echo '</a>';
 			echo '</li>';
