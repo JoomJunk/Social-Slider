@@ -2,8 +2,8 @@
 /**
  * @package    JJ_Social_Slider
  * @author     JoomJunk <admin@joomjunk.co.uk>
- * @copyright  Copyright (C) 2011 - 2016 JoomJunk. All Rights Reserved
- * @license    GPL v3.0 or later http://www.gnu.org/licenses/gpl-3.0.html
+ * @copyright  Copyright (C) 2011 - 2021 JoomJunk. All Rights Reserved
+ * @license    GPL v3.0 or later https://gnu.org/licenses/gpl-3.0.html
  */
 
 // No direct access to this file

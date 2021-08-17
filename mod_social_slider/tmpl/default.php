@@ -1,10 +1,10 @@
 <?php
 /**
-* @package    JJ_Social_Slider
-* @author     JoomJunk <admin@joomjunk.co.uk>
-* @copyright  Copyright (C) 2011 - 2016 JoomJunk. All Rights Reserved
-* @license    GPL v3 http://www.gnu.org/licenses/gpl-3.0.html
-*/
+ * @package    JJ_Social_Slider
+ * @author     JoomJunk <admin@joomjunk.co.uk>
+ * @copyright  Copyright (C) 2011 - 2021 JoomJunk. All Rights Reserved
+ * @license    GPL v3.0 or later https://gnu.org/licenses/gpl-3.0.html
+ */
 
 // No direct access
 defined('_JEXEC')  or die('Restricted access');
